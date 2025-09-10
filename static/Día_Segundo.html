@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Novena y Meditación Personal: Día Segundo: La Huida a Egipto por M. Vinicio">
+    <title>Día Segundo: La Huida a Egipto - Rincón Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+        
+        .author-info {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #34495e;
+            text-indent: 2.5rem;
+            position: relative;
+        }
+        
+        .story-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-indent: 0;
+        }
+        
+        .story-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin: 0.05em 0.3em 0 0;
+            color: #3498db;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos especiales para poemas */
+        .poem-content {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .poem-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .poem-content h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .poem-content p {
+            text-indent: 0;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .poem-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            line-height: 0.6;
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: fit-content;
+        }
+        
+        .footer {
+            padding: 30px 40px;
+            background: rgba(248, 249, 250, 0.8);
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 25px;
+            }
+            
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .story-content p:first-of-type::first-letter,
+            .poem-content p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .footer { 
+                display: none; 
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                background: white;
+            }
+            .content {
+                padding: 0;
+                animation: none;
+            }
+            .content h1::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navigation">
+                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="javascript:history.back()" class="nav-link">← Atrás</a>
+                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+            </nav>
+            <div class="category-badge">Novena y Meditación Personal</div>
+        </div>
+        
+        <div class="content">
+            <div class="story-content">
+                <h1>Día Segundo: La Huida a Egipto</h1>
+<p><strong>Por M. Vinicio</strong></p>
+<p>---</p>
+<h2>Antífona de Entrada</h2>
+<p>(Cf. Mt 2, 13) <em>El ángel del Señor se apareció en sueños a José y le dijo: «Levántate, toma al niño y a su madre, huye a Egipto y quédate allí hasta que yo te avise».</em></p>
+<p>---</p>
+<h2>Oraciones Iniciales</h2>
+<p><strong>Por la señal de la Santa Cruz...</strong></p>
+<p><strong>Acto de Contrición</strong> Señor mío, Jesucristo, Dios y Hombre verdadero, Creador, Padre y Redentor mío; por ser quien eres, Bondad infinita, y porque te amo sobre todas las cosas, me pesa de todo corazón haberte ofendido; también me pesa porque puedes castigarme con las penas del infierno. Ayudado de tu divina gracia, propongo firmemente nunca más pecar, confesarme y cumplir la penitencia que me sea impuesta. Amén.</p>
+<p><strong>Oración Colecta</strong> Señor, tú que has querido que la Madre compartiera los dolores de tu Hijo al pie de la cruz; haz que la Iglesia, asociándose con María a la pasión de Cristo, merezca participar de su resurrección. Por nuestro Señor Jesucristo, tu Hijo, que vive y reina contigo en la unidad del Espíritu Santo y es Dios por los siglos de los siglos. Amén.</p>
+<p>---</p>
+<h2>Meditación del Segundo Dolor</h2>
+<p><strong>Lectura Breve (Mateo 2, 13-14)</strong> Después que ellos se retiraron, el Ángel del Señor se le apareció en sueños a José y le dijo: «Levántate, toma contigo al niño y a su madre, y huye a Egipto; y estate allí hasta que yo te diga. Porque Herodes va a buscar al niño para matarlo». Él se levantó, tomó de noche al niño y a su madre, y se retiró a Egipto.</p>
+<p><strong>Reflexión</strong> Meditamos el segundo dolor: la huida a Egipto. Apenas iniciado el camino de la maternidad, María debe enfrentar el exilio. Es el dolor de la persecución, de la noche, de la incertidumbre. Debe dejar su tierra, su casa, su parentela, para salvar la vida de su Hijo. En este dolor contemplamos la fragilidad del Dios hecho niño y la fortaleza de una madre que lo protege a toda costa.</p>
+<p><em>Conexión:</em> Unimos este dolor al de millones de <strong>migrantes y refugiados</strong> en el mundo. Oramos por aquellos que huyen de la guerra, la persecución o la miseria. Que la Virgen de los Dolores, que conoció la angustia del destierro, los proteja en su camino, les dé la fortaleza para no perder la esperanza y les ayude a encontrar un hogar seguro donde puedan vivir en paz y con dignidad.</p>
+<p>---</p>
+<h2>Peticiones del Día</h2>
+<p>1. Oh, Virgen del exilio, te encomendamos a todos los migrantes y refugiados que en este momento están cruzando fronteras, desiertos o mares. Protégelos de los peligros, líbralos de las manos de traficantes y haz que encuentren corazones generosos y una acogida digna en su destino. 2. Por las familias que han sido separadas por la migración forzosa. Que tu amor maternal, que protegió al Niño Jesús en Egipto, sane las heridas de la separación y les conceda la gracia de reunirse pronto en un hogar seguro y en paz. 3. Te pedimos por los países que reciben a un gran número de migrantes, para que sus gobiernos y ciudadanos no caigan en la indiferencia o el miedo, sino que, movidos por la caridad, desarrollen políticas de integración justas y humanas que respeten la dignidad de cada persona. 4. Por los niños migrantes, especialmente los que viajan solos, que son los más vulnerables. Sé tú, Madre, su amparo y guía. No permitas que el trauma del viaje apague su inocencia y concédeles la oportunidad de tener una infancia segura y un futuro lleno de esperanza. 5. Te rogamos por la conversión de aquellos que promueven el odio y la xenofobia. Que tu ejemplo de acogida y el recuerdo de que tu Hijo también fue un extranjero, derriben los muros del prejuicio y transformen los corazones de piedra en corazones de carne. 6. Por las organizaciones y voluntarios que trabajan incansablemente para ayudar a los migrantes y refugiados en las fronteras y en las ciudades de acogida. Dales la fortaleza para no desfallecer y la sabiduría para servir con amor y eficacia. 7. Te pedimos, Madre, por los que han muerto durante su viaje migratorio. Que tu regazo, que acogió a Jesús en el destierro, sea también el lugar de descanso para ellos, y que el Señor les conceda la patria definitiva del Cielo. 8. Para que nosotros, en nuestras comunidades, seamos capaces de ver el rostro de Cristo en el migrante y en el refugiado. Ayúdanos a superar nuestra comodidad y a abrir nuestras puertas y nuestros corazones para compartir lo que somos y lo que tenemos. 9. Por los gobernantes de las naciones de origen de los migrantes, para que luchen contra la corrupción, la violencia y la pobreza que obligan a tantos a abandonar su tierra. Que trabajen por crear condiciones de vida digna para todos sus ciudadanos. 10. Por la Iglesia, para que sea siempre una "madre sin fronteras" y un "hospital de campaña" para todos los heridos del camino, anunciando con obras y palabras el amor universal de Dios, que no hace acepción de personas.</p>
+<p>---</p>
+<h2>Profundizando en la Oración</h2>
+<p><strong>Oración a la Virgen Dolorosa por los Migrantes</strong> Oh, María, Madre del exiliado Jesús, que conociste la angustia de la huida y el desarraigo. Te pedimos por todos los migrantes y refugiados del mundo. Sé su estrella en la noche, su consuelo en la soledad y su fortaleza en la adversidad. Inspira en nuestros corazones la caridad y la acogida, para que nadie se sienta extranjero en la casa de Dios. Amén.</p>
+<p><strong>Contemplación Adicional</strong> La huida a Egipto no fue un viaje de placer, sino una experiencia de vulnerabilidad y dependencia. María y José confiaron plenamente en la providencia divina, a pesar de la incertidumbre. Esta meditación nos invita a reflexionar sobre nuestra propia actitud ante los "extranjeros" en nuestra sociedad. ¿Somos capaces de ver en ellos el rostro de Cristo, que también fue un migrante? La caridad cristiana nos llama a ir más allá de la compasión, hacia la acción concreta de acogida y defensa de la dignidad humana.</p>
+<p><strong>Cita para la Reflexión</strong> "La Iglesia, que es madre, extiende su abrazo a todos los hombres, especialmente a los que sufren, a los que están solos, a los que son marginados, a los que son perseguidos." - Papa Francisco</p>
+<p><strong>Petición General Adicional</strong> Te rogamos, Madre Dolorosa, por la conversión de los corazones endurecidos por el egoísmo y la indiferencia. Que tu ejemplo de acogida y el recuerdo de que tu Hijo también fue un extranjero, derriben los muros del prejuicio y transformen los corazones de piedra en corazones de carne, capaces de amar sin fronteras.</p>
+<p>---</p>
+<h2>Oraciones Finales</h2>
+<p><strong>Rezo</strong> Se recomienda rezar un Padrenuestro, siete Avemarías y un Gloria en meditación de este dolor. O bien, la segunda parte de la secuencia <em>Stabat Mater</em>.</p>
+<p><strong>Oración Final</strong> Después de recibir el sacramento de la eterna redención, te pedimos, Señor, que, al recordar los dolores de la Virgen María, completemos en nosotros, en favor de la Iglesia, lo que falta a la pasión de Jesucristo. Él, que vive y reina por los siglos de los siglos. Amén.</p>
+                <div class="author-info">
+                    <em>Por M. Vinicio</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+        </div>
+    </div>
+</body>
+</html>

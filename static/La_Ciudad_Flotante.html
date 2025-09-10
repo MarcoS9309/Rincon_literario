@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuentos: La Ciudad Flotante por M. Vinicio">
+    <title>La Ciudad Flotante - Rincón Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+        
+        .author-info {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #34495e;
+            text-indent: 2.5rem;
+            position: relative;
+        }
+        
+        .story-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-indent: 0;
+        }
+        
+        .story-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin: 0.05em 0.3em 0 0;
+            color: #3498db;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos especiales para poemas */
+        .poem-content {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .poem-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .poem-content h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .poem-content p {
+            text-indent: 0;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .poem-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            line-height: 0.6;
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: fit-content;
+        }
+        
+        .footer {
+            padding: 30px 40px;
+            background: rgba(248, 249, 250, 0.8);
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 25px;
+            }
+            
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .story-content p:first-of-type::first-letter,
+            .poem-content p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .footer { 
+                display: none; 
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                background: white;
+            }
+            .content {
+                padding: 0;
+                animation: none;
+            }
+            .content h1::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navigation">
+                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="javascript:history.back()" class="nav-link">← Atrás</a>
+                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+            </nav>
+            <div class="category-badge">Cuentos</div>
+        </div>
+        
+        <div class="content">
+            <div class="story-content">
+                <h1>La Ciudad Flotante</h1>
+<p><em>Por M. Vinicio</em></p>
+<h2>I. Aeridor, la Maravilla Suspendida</h2>
+<p>Aeridor era una maravilla de la ingeniería, una ciudad suspendida en el cielo sobre un mar de nubes perpetuas. Suspendida por el poder del Cristal Aetérico, un artefacto masivo que zumbaba en el corazón de la ciudad, Aeridor era el último bastión de la humanidad.</p>
+<p>Debajo de las nubes, en la "Superficie", se decía que el mundo estaba envenenado y habitado por bestias monstruosas. Los ciudadanos vivían sus vidas enteras sin pisar tierra firme, convencidos de que el cielo era su único hogar seguro.</p>
+<h2>II. La Artífice Preocupada</h2>
+<p>Elara era una joven y brillante Artífice, una de las pocas encargadas del mantenimiento de los conductos de energía que fluían desde el Cristal Aetérico central. Desde niña, había estado fascinada por la ciencia de la levitación, dedicando su vida a comprender los misterios que mantenían su ciudad en las alturas.</p>
+<p>Sin embargo, últimamente, había notado algo preocupante. Las fluctuaciones de energía del Cristal, antes predecibles y estables, se habían vuelto erráticas. La luz de la ciudad parpadeaba sutilmente, y a veces, un temblor profundo y apenas perceptible recorría las calles de mármol.</p>
+<h2>III. El Consejo Ciego</h2>
+<p>Presentó sus hallazgos al Consejo de Ancianos, pero fue desestimada. La acusaron de alarmismo. El Cristal había mantenido a Aeridor a flote durante cinco siglos; era infalible. Pero Elara sabía que los números no mentían.</p>
+<p>El Cristal se estaba muriendo.</p>
+<h2>IV. Los Archivos Prohibidos</h2>
+<p>Sabiendo que el Consejo no la escucharía, Elara buscó respuestas en los archivos prohibidos, textos antiguos de los primeros Artífices que construyeron Aeridor. Allí encontró la verdad que cambiaría todo:</p>
+<p>El Cristal Aetérico no era una fuente de energía perpetua. Necesitaba ser recargado. Y la única fuente de la energía que necesitaba se encontraba en la Superficie. Los fundadores habían ocultado esta verdad para evitar el pánico, creando el mito de un mundo inferior inhabitable.</p>
+<h2>V. La Elección Imposible</h2>
+<p>Elara se enfrentó a una elección imposible: dejar que su ciudad cayera lentamente del cielo o desafiar todas las leyes y creencias de su pueblo y descender a lo desconocido.</p>
+<p>Construyó en secreto un pequeño planeador, un "Ala de Descenso", utilizando diseños olvidados. Una noche, mientras Aeridor dormía bajo el resplandor de sus luces menguantes, Elara se lanzó desde el borde de la ciudad, cayendo en picado hacia el mar de nubes.</p>
+<h2>VI. El Descenso a la Verdad</h2>
+<p>La travesía fue aterradora. Las nubes no eran vapor de agua, sino una espesa niebla de productos químicos y polvo. Cuando finalmente salió por debajo, la vista la dejó sin aliento.</p>
+<p>La Superficie no era un páramo yermo. Era un mundo vibrante y salvaje, cubierto por una jungla de flora bioluminiscente y extraña. El aire era denso y olía a tierra y a vida.</p>
+<p>Su planeador se estrelló en un bosque de árboles fúngicos gigantes. Sola y desarmada, Elara tuvo que aprender a sobrevivir.</p>
+<h2>VII. Un Mundo de Maravillas</h2>
+<p>Descubrió que las "bestias monstruosas" eran en realidad criaturas majestuosas, y que el "aire venenoso" era respirable, aunque diferente. Cada día revelaba nuevas maravillas: plantas que cantaban con el viento, cristales que almacenaban la luz solar, ecosistemas enteros que parecían obras de arte vivientes.</p>
+<p>Siguiendo las indicaciones de los textos antiguos, buscó la "Piedra Raíz", la fuente de energía que necesitaba. Su viaje la llevó a través de ruinas de una civilización que no conocía, enfrentándose a los peligros de un mundo que era a la vez hermoso y mortal.</p>
+<h2>VIII. El Corazón de la Tierra</h2>
+<p>Finalmente, encontró la Piedra Raíz en una vasta cueva subterránea. No era una piedra, sino una red cristalina colosal, un organismo geológico vivo que pulsaba con la misma energía que el Cristal de Aeridor.</p>
+<p>Se dio cuenta de que el Cristal de su ciudad no era una máquina, sino el corazón arrancado de esta criatura geológica. Los fundadores no solo habían ocultado la verdad, sino que habían cometido un acto terrible.</p>
+<h2>IX. La Sanación</h2>
+<p>Elara entendió que no podía simplemente "recargar" su ciudad. Tenía que sanar la herida. Usando su conocimiento de la tecnología aetérica, no extrajo energía, sino que creó un conducto, un puente armónico entre la Piedra Raíz y el Cristal de Aeridor.</p>
+<p>Fue un proceso delicado, que requirió que sincronizara las frecuencias de ambos cristales, como afinar dos instrumentos para que tocaran la misma nota.</p>
+<h2>X. El Nuevo Amanecer</h2>
+<p>Arriba, en Aeridor, la gente observaba con asombro cómo el parpadeo de la ciudad cesaba. El zumbido del Cristal se hizo más fuerte, más estable, más <em>vivo</em>. Las luces brillaron más que nunca.</p>
+<p>Elara no regresó de inmediato. Se quedó en la Superficie, aprendiendo de la tierra y sus criaturas. Cuando finalmente ascendió de nuevo a Aeridor, no lo hizo como una fugitiva, sino como una embajadora.</p>
+<p>Trajo consigo no solo la salvación de su hogar, sino una verdad que cambiaría su civilización para siempre: no estaban solos en el cielo, sino que eran parte de un mundo mucho más grande y maravilloso de lo que jamás habían imaginado.</p>
+<p>Aeridor ya no era una fortaleza flotante, sino un puente entre el cielo y la tierra.</p>
+                <div class="author-info">
+                    <em>Por M. Vinicio</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuentos: El Ladrón de Ecos por M. Vinicio">
+    <title>El Ladrón de Ecos - Rincón Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+        
+        .author-info {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #34495e;
+            text-indent: 2.5rem;
+            position: relative;
+        }
+        
+        .story-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-indent: 0;
+        }
+        
+        .story-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin: 0.05em 0.3em 0 0;
+            color: #3498db;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos especiales para poemas */
+        .poem-content {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .poem-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .poem-content h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .poem-content p {
+            text-indent: 0;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .poem-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            line-height: 0.6;
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: fit-content;
+        }
+        
+        .footer {
+            padding: 30px 40px;
+            background: rgba(248, 249, 250, 0.8);
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 25px;
+            }
+            
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .story-content p:first-of-type::first-letter,
+            .poem-content p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .footer { 
+                display: none; 
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                background: white;
+            }
+            .content {
+                padding: 0;
+                animation: none;
+            }
+            .content h1::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navigation">
+                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="javascript:history.back()" class="nav-link">← Atrás</a>
+                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+            </nav>
+            <div class="category-badge">Cuentos</div>
+        </div>
+        
+        <div class="content">
+            <div class="story-content">
+                <h1>El Ladrón de Ecos</h1>
+<p><em>Por M. Vinicio</em></p>
+<p>La ciudad de Sonoria estaba obsesionada con el sonido. La arquitectura estaba diseñada para crear acústicas perfectas, las calles estaban pavimentadas con materiales que amplificaban o silenciaban los pasos según la zona, y la gente se comunicaba a través de complejas melodías personales silbadas. En este mundo, el detective Axel Rourke era una anomalía: era casi sordo de un oído, un defecto que ocultaba con una habilidad casi sobrehumana para leer los labios y sentir las vibraciones.</p>
+<p>El caso que cayó en su escritorio era tan extraño como la propia ciudad. No se robaban joyas, ni dinero, ni arte. Se robaban sonidos. Ecos específicos y preciosos. La primera víctima fue una joven pareja a la que le robaron la primera risa de su bebé, dejando solo un silencio antinatural donde debería haber habido alegría. La segunda fue un aclamado compositor, a quien le fue arrebatado el acorde final de su sinfonía magna directamente de la sala de conciertos, dejando a la orquesta y al público en un estado de shock incompleto.</p>
+<p>Axel se sumergió en el caso. ¿Cómo se puede robar un sonido? Entrevistó a las víctimas, sintiendo la forma de sus palabras en el aire, notando la angustia en las vibraciones de sus gargantas. Todos describieron la misma sensación: un repentino vacío, una quietud fría y la sensación de que algo fundamental les había sido arrancado.</p>
+<p>Sus investigaciones lo llevaron al inframundo de los "Acústicos Ilegales", individuos que traficaban con sonidos prohibidos: el estruendo de edificios derrumbándose, el silencio absoluto (un lujo ilegal en Sonoria), o las voces de los muertos, reconstruidas a partir de viejas grabaciones. Allí escuchó susurros sobre un hombre conocido solo como "El Silenciador", un genio de la tecnología sónica que había inventado un dispositivo capaz de aislar y capturar una onda sonora específica de su entorno.</p>
+<p>Axel dedujo que el ladrón no era un simple traficante. Los sonidos robados eran demasiado poéticos, demasiado cargados de emoción. No era por dinero; era por colección.</p>
+<p>El detective comenzó a pensar en qué sonido irremplazable podría ser el próximo objetivo. Su mente se centró en la "Campana del Ocaso", una campana milenaria que sonaba una sola vez al año para marcar el solsticio de invierno. Su tañido era único, una nota profunda y resonante que, según la leyenda, contenía la memoria de todos los inviernos pasados. Era el sonido más preciado de Sonoria.</p>
+<p>La noche del solsticio, Axel no esperó en la plaza de la campana. En cambio, fue al "Gran Resonador", una cámara subterránea diseñada para amplificar y preservar el eco de la campana durante horas. Sabía que el ladrón no robaría el sonido en sí, sino su alma: su eco.</p>
+<p>En la penumbra de la cámara, encontró a un hombre de aspecto frágil, rodeado por un complejo aparato de esferas de cristal y diapasones de metal. Era El Silenciador. En el centro del dispositivo, una esfera de cristal brillaba, conteniendo el eco robado de la risa del bebé, que giraba como un pequeño sol de alegría. Otra esfera contenía el acorde de la sinfonía, una nebulosa de armonía congelada.</p>
+<p>"Son hermosos, ¿no crees?", susurró el hombre, sin apartar la vista de su colección. "Demasiado hermosos para desvanecerse en el aire. Yo los preservo. Les doy la eternidad".</p>
+<p>Axel se dio cuenta de que no estaba ante un ladrón, sino ante un artista trágico. El hombre, cuyo verdadero nombre era Finn, había perdido a su hija años atrás, y con ella, el sonido de su voz. Desde entonces, se había obsesionado con capturar momentos sonoros perfectos para que nadie más sintiera la pérdida que él sintió.</p>
+<p>Justo en ese momento, la Campana del Ocaso sonó en la superficie. Una profunda vibración llenó la cámara, y el dispositivo de Finn cobró vida, preparándose para capturar el eco. Axel no sacó un arma. En su lugar, se acercó a Finn y, en un lenguaje de señas que había aprendido en su juventud, le contó sobre el silencio en su propio oído, sobre la belleza que había aprendido a encontrar en la imperfección, en la fugacidad de un momento que solo se puede atesorar en la memoria.</p>
+<p>Finn lo observó, con lágrimas en los ojos. Vio en Axel a un compañero en la pérdida, no a un adversario. Cuando el eco de la campana llegó a la cámara, una onda de sonido puro y antiguo, Finn extendió la mano y apagó su máquina.</p>
+<p>El eco llenó el espacio, rebotó en las paredes y luego, lentamente, se desvaneció, como estaba destinado a hacerlo. Finn no fue arrestado. En cambio, trabajó con Axel para devolver los sonidos que había robado. El proceso fue complejo, liberando los ecos en sus lugares de origen en el aniversario exacto de su captura.</p>
+<p>La risa del bebé volvió a su cuna, el acorde final regresó a la sinfonía. Y Finn, aunque nunca recuperó la voz de su hija, encontró un nuevo propósito: se convirtió en el curador del Archivo de Sonidos de Sonoria, no capturando ecos, sino registrándolos para la posteridad, enseñando a otros que la verdadera belleza de un sonido no reside en su posesión, sino en el acto de escucharlo y dejarlo ir.</p>
+                <div class="author-info">
+                    <em>Por M. Vinicio</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+        </div>
+    </div>
+</body>
+</html>

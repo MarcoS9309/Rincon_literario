@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuentos: El Jardín de Silicio por M. Vinicio">
+    <title>El Jardín de Silicio - Rincón Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+        
+        .author-info {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #34495e;
+            text-indent: 2.5rem;
+            position: relative;
+        }
+        
+        .story-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-indent: 0;
+        }
+        
+        .story-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin: 0.05em 0.3em 0 0;
+            color: #3498db;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos especiales para poemas */
+        .poem-content {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .poem-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .poem-content h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .poem-content p {
+            text-indent: 0;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .poem-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            line-height: 0.6;
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: fit-content;
+        }
+        
+        .footer {
+            padding: 30px 40px;
+            background: rgba(248, 249, 250, 0.8);
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 25px;
+            }
+            
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .story-content p:first-of-type::first-letter,
+            .poem-content p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .footer { 
+                display: none; 
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                background: white;
+            }
+            .content {
+                padding: 0;
+                animation: none;
+            }
+            .content h1::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navigation">
+                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="javascript:history.back()" class="nav-link">← Atrás</a>
+                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+            </nav>
+            <div class="category-badge">Cuentos</div>
+        </div>
+        
+        <div class="content">
+            <div class="story-content">
+                <h1>El Jardín de Silicio</h1>
+<p><em>Por M. Vinicio</em></p>
+<h2>I. El Mundo Sintético</h2>
+<p>En el año 2342, la naturaleza era un mito. La flora y la fauna que alguna vez cubrieron la Tierra ahora solo existían como entradas corruptas en archivos de datos históricos o como recreaciones holográficas en los museos de la Cúpula.</p>
+<p>Kaelen era una arqueóloga de datos, una profesión que consistía en bucear en los océanos de información del pasado, buscando conocimiento perdido o recuperando fragmentos de la era pre-sintética. Su trabajo la llevaba a explorar servidores abandonados, bases de datos fragmentadas y redes obsoletas, rescatando tesoros digitales del olvido.</p>
+<h2>II. El Descubrimiento</h2>
+<p>Un día, mientras navegaba por los restos de un servidor del siglo XXI, encontró algo inusual: un archivo masivo, extrañamente protegido por capas de una encriptación arcaica pero robusta. La mayoría lo habría descartado como un simple error de datos, pero la curiosidad de Kaelen era su mayor virtud.</p>
+<p>Pasó semanas descifrando el código, sintiendo que se acercaba a algo monumental. Las noches se volvieron días mientras desentrañaba cada capa de protección, cada algoritmo de seguridad que guardaba celosamente su secreto.</p>
+<p>Cuando la última barrera de encriptación cayó, no encontró texto ni imágenes, sino una secuencia pura y elegante. Era un genoma. Las etiquetas de los metadatos estaban fragmentadas, pero pudo distinguir dos palabras: <em>Rosa gallica</em>. No era el código de un programa, sino el plano de una vida. El código genético de una flor.</p>
+<h2>III. La Transgresión</h2>
+<p>El Protocolo de Pureza Sintética prohibía estrictamente la replicación de material orgánico no sancionado. Crear vida biológica real se consideraba un acto de terrorismo biológico, un riesgo impredecible para el ecosistema perfectamente controlado de la Cúpula.</p>
+<p>Pero la idea de ver un color que no fuera generado por un LED, de tocar una textura que no fuera plástico o metal, se apoderó de ella. Era una sed ancestral, un anhelo de lo auténtico que ni siglos de condicionamiento sintético habían podido erradicar.</p>
+<p>Usando un bio-impresor 3D obsoleto que había en el mercado negro, Kaelen comenzó el arriesgado proceso. Alimentó la secuencia en la máquina, reemplazando los cartuchos de polímero con suspensiones de nutrientes y compuestos orgánicos base que había sintetizado en secreto.</p>
+<h2>IV. El Milagro</h2>
+<p>Durante días, la máquina zumbó, construyendo capa por capa de células, siguiendo el antiguo plano. Finalmente, la impresora se detuvo. Dentro de la cámara de gel, había un pequeño brote verde. Era la cosa más real que Kaelen había visto en su vida.</p>
+<p>Con un cuidado infinito, lo trasplantó a una maceta con tierra sintética enriquecida, bajo una lámpara de crecimiento de espectro completo. Verla crecer se convirtió en su obsesión. Cada nuevo milímetro de tallo, cada hoja que se desplegaba, era un milagro.</p>
+<p>Y entonces, un día, un capullo comenzó a formarse. Se hinchó y, lentamente, pétalo por pétalo, se abrió. El color era de un rojo profundo, casi aterciopelado. El aroma, sutil y complejo, llenó su pequeño apartamento. Era abrumador.</p>
+<p>Lloró, no de tristeza, sino de una emoción para la que no tenía nombre, un eco de una experiencia humana perdida hacía mucho tiempo.</p>
+<h2>V. La Caída y la Semilla</h2>
+<p>Pero su secreto no duró. Los sensores de biomasa de la Cúpula detectaron una anomalía en su sector. Los Ejecutores, vestidos con trajes estériles de color blanco, derribaron su puerta. Vieron la flor, no como un milagro, sino como una contaminación.</p>
+<p>Mientras la arrastraban, Kaelen no luchó. Su mirada estaba fija en la rosa. Uno de los Ejecutores se acercó para incinerarla, pero se detuvo. Se quedó mirando la flor, con el lanzallamas en la mano, paralizado por su belleza imposible.</p>
+<p>En ese momento de vacilación, Kaelen supo que había ganado. No había salvado su libertad, pero había reintroducido en el mundo una idea peligrosa y hermosa: la idea de lo real. Y como una semilla, esa idea, una vez plantada, seguramente encontraría una manera de crecer.</p>
+                <div class="author-info">
+                    <em>Por M. Vinicio</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+        </div>
+    </div>
+</body>
+</html>

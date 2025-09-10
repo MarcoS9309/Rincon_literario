@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuentos: El Último Mensaje del Nautilus por M. Vinicio">
+    <title>El Último Mensaje del Nautilus - Rincón Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+        
+        .author-info {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #34495e;
+            text-indent: 2.5rem;
+            position: relative;
+        }
+        
+        .story-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-indent: 0;
+        }
+        
+        .story-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin: 0.05em 0.3em 0 0;
+            color: #3498db;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos especiales para poemas */
+        .poem-content {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .poem-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .poem-content h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .poem-content p {
+            text-indent: 0;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .poem-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            line-height: 0.6;
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: fit-content;
+        }
+        
+        .footer {
+            padding: 30px 40px;
+            background: rgba(248, 249, 250, 0.8);
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 25px;
+            }
+            
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .story-content p:first-of-type::first-letter,
+            .poem-content p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .footer { 
+                display: none; 
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                background: white;
+            }
+            .content {
+                padding: 0;
+                animation: none;
+            }
+            .content h1::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navigation">
+                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="javascript:history.back()" class="nav-link">← Atrás</a>
+                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+            </nav>
+            <div class="category-badge">Cuentos</div>
+        </div>
+        
+        <div class="content">
+            <div class="story-content">
+                <p><em>Por M. Vinicio</em></p>
+<h1>El Último Mensaje del Nautilus</h1>
+<p>La Fosa de las Marianas era el último lugar inexplorado de la Tierra, un abismo de oscuridad y presión aplastante. Fue allí donde la tripulación del sumergible de investigación "El Eco" encontró lo imposible: el Nautilus. No una réplica, ni los restos de un submarino con ese nombre, sino el submarino de ficción de Julio Verne, perfectamente conservado en un cañón a diez mil metros de profundidad, como si se hubiera posado allí el día anterior.</p>
+<p>La Dra. Aris Thorne, líder de la expedición, y su piloto, el ex-comandante de la marina Ben Carter, fueron los primeros en acercarse. El diseño era exactamente como Verne lo había descrito: un casco fusiforme de acero, con grandes ventanales de observación y un aura de poder silencioso. No había señales de vida, ni emisiones de energía.</p>
+<p>Tras semanas de cuidadosa preparación, lograron abrir una de las escotillas. El interior estaba inmaculado, aunque extrañamente vacío. El aire era estéril y olía a ozono. En el gran salón, junto al enorme órgano de tubos, encontraron el único objeto fuera de lugar: sobre un atril de música, había una sola hoja de papel.</p>
+<p>No era un diario de a bordo, ni una carta. Era una partitura musical. Debajo de las notas, una sola frase escrita con una caligrafía elegante: "Donde la música encuentra el silencio, la puerta se abrirá".</p>
+<p>Aris, una científica pragmática, estaba desconcertada. Ben, sin embargo, que también era un pianista aficionado, sintió un escalofrío. Se sentó ante el órgano y, con vacilación, tocó la melodía. Era una pieza inquietante y hermosa, llena de acordes que evocaban la soledad del océano profundo. Cuando tocó la última nota, un silencio profundo llenó el salón. Y entonces, un suave clic resonó en la sala.</p>
+<p>Una sección del suelo se deslizó, revelando un compartimento oculto. Dentro no había oro ni artefactos, sino un mapa estelar. Pero no era un mapa del cielo nocturno. Mostraba una red de corrientes oceánicas que abarcaban todo el globo, con ciertos puntos marcados con los mismos símbolos musicales de la partitura.</p>
+<p>"No es un tesoro", dijo Aris, su mente acelerando. "Es una ruta. 'Donde la música encuentra el silencio'... se refiere a los 'puntos muertos' acústicos en el océano, lugares donde las corrientes y la topografía submarina crean zonas de silencio casi absoluto".</p>
+<p>La tripulación del Eco se embarcó en la búsqueda más extraña de la historia. Siguieron el mapa del Capitán Nemo, viajando de un punto muerto acústico a otro. En cada ubicación, encontraban una pequeña baliza, cada una conteniendo una nueva pieza del rompecabezas: un fragmento de un plano, una ecuación de física exótica, una muestra de un elemento desconocido.</p>
+<p>Estaban reconstruyendo la obra de Nemo. No era un arma, ni una fuente de energía. Era un motor. Un motor que no propulsaba un submarino a través del agua, sino que doblaba el espacio-tiempo. El Nautilus no era solo un submarino; era una nave estelar que viajaba por los pliegues del océano.</p>
+<p>El último punto del mapa los llevó a la Dorsal Mesoatlántica, a un lugar donde la actividad geotérmica era inusualmente alta. Allí encontraron la última pieza: el corazón del motor, una esfera de cristal que contenía un universo en miniatura.</p>
+<p>Mientras Aris y Ben preparaban la esfera para transportarla, sus sensores detectaron otro sumergible acercándose. Era un submarino militar sigiloso, perteneciente a una corporación que había estado siguiendo en secreto al Eco. Querían la tecnología de Nemo para ellos.</p>
+<p>Una tensa persecución se desarrolló en las profundidades. El Eco era un vehículo de investigación, no un buque de guerra. Ben usó su conocimiento de las corrientes y los cañones submarinos para evadir a sus perseguidores, pero sabía que era cuestión de tiempo.</p>
+<p>Desesperado, guió al Eco de vuelta a la única fortaleza que conocía: el Nautilus. Se acoplaron al antiguo submarino justo cuando el sumergible corporativo abría fuego. Los torpedos impactaron contra el casco del Nautilus, pero el metal, forjado con una tecnología desconocida, apenas se abolló.</p>
+<p>Dentro del Nautilus, Aris tuvo una idea. "¡El motor!", exclamó. "¡No está completo sin su fuente de energía!". Corrieron al reactor del Nautilus, un vórtice de energía brillante que todavía pulsaba con vida. Colocaron la esfera de cristal en el centro del mecanismo que habían reconstruido.</p>
+<p>Mientras el submarino enemigo los bombardeaba, Ben regresó al órgano. "Donde la música encuentra el silencio...", murmuró. Volvió a tocar la partitura. Pero esta vez, con el motor completo, el efecto fue diferente.</p>
+<p>Las notas no solo produjeron sonido. Produjeron luz. El Nautilus entero vibró, no por los impactos, sino con una energía creciente. Fuera de los ventanales, el agua no se arremolinaba; se doblaba. Las estrellas aparecieron en las profundidades del océano.</p>
+<p>El submarino enemigo, atrapado en la distorsión espacial, fue lanzado sin control a través de una corriente, desapareciendo en la distancia.</p>
+<p>El Eco se desacopló justo a tiempo. Aris y Ben observaron desde su pequeño sumergible cómo el Nautilus, envuelto en una burbuja de espacio-tiempo distorsionado, se desvanecía. No se movió, simplemente dejó de estar allí.</p>
+<p>Regresaron a la superficie sin pruebas de su descubrimiento, solo con una historia increíble. Habían resuelto el último misterio del Capitán Nemo. No era un hombre que se escondía del mundo en el fondo del mar. Era un hombre que había encontrado una manera de zarpar desde el fondo del mar hacia las estrellas. Y su mensaje final no era de despedida, sino una invitación, una partitura para un viaje que la humanidad apenas comenzaba a comprender.</p>
+                <div class="author-info">
+                    <em>Por M. Vinicio</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+        </div>
+    </div>
+</body>
+</html>

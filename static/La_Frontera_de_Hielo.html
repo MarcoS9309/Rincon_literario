@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuentos: La Frontera de Hielo por M. Vinicio">
+    <title>La Frontera de Hielo - Rincón Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+        
+        .author-info {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #34495e;
+            text-indent: 2.5rem;
+            position: relative;
+        }
+        
+        .story-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-indent: 0;
+        }
+        
+        .story-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin: 0.05em 0.3em 0 0;
+            color: #3498db;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos especiales para poemas */
+        .poem-content {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .poem-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .poem-content h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .poem-content p {
+            text-indent: 0;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .poem-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            line-height: 0.6;
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: fit-content;
+        }
+        
+        .footer {
+            padding: 30px 40px;
+            background: rgba(248, 249, 250, 0.8);
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 25px;
+            }
+            
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .story-content p:first-of-type::first-letter,
+            .poem-content p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .footer { 
+                display: none; 
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                background: white;
+            }
+            .content {
+                padding: 0;
+                animation: none;
+            }
+            .content h1::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navigation">
+                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="javascript:history.back()" class="nav-link">← Atrás</a>
+                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+            </nav>
+            <div class="category-badge">Cuentos</div>
+        </div>
+        
+        <div class="content">
+            <div class="story-content">
+                <p><em>Por M. Vinicio</em></p>
+<h1>La Frontera de Hielo</h1>
+<p>El planeta Theron era una bola de nieve del tamaño de Marte, un mundo atrapado en una edad de hielo perpetua. La única razón por la que la pequeña colonia humana de "Refugio" podía sobrevivir era gracias a los Behemoths. Estas criaturas colosales, del tamaño de una pequeña montaña, vagaban por los desiertos de hielo en una migración anual sin fin. Sus cuerpos generaban un calor biológico inmenso, creando a su paso un microclima temporal, un corredor de vida donde el hielo se derretía para revelar la tierra congelada y la flora latente florecía brevemente.</p>
+<p>Durante generaciones, los colonos habían seguido a los Behemoths, viviendo como nómadas en enormes vehículos sobre orugas llamados "Ciudades-Oruga". Dependían del calor de las bestias para cultivar, para reponer sus suministros de agua y para sobrevivir.</p>
+<p>Joric era un "Rastreador", uno de los valientes exploradores que se adelantaban a la Ciudad-Oruga para monitorear al Behemoth y predecir su ruta. Era un trabajo solitario y peligroso. Un día, mientras calibraba sus sensores, notó algo alarmante. El Behemoth al que seguían, al que llamaban "Viejo Padre", estaba cambiando de rumbo. En lugar de seguir la ruta migratoria tradicional a través de los Valles de Eco, se dirigía hacia las Agujas de Cristal, una región de glaciares inestables y cañones de hielo intransitables.</p>
+<p>Si la Ciudad-Oruga lo seguía, quedarían atrapados y se congelarían. Si no lo hacían, perderían el calor del Behemoth y morirían de hambre.</p>
+<p>Joric transmitió la advertencia a la líder de la colonia, su madre, la Comandante Anya. La noticia sembró el pánico. Anya, una mujer pragmática y endurecida por décadas de liderazgo en el hielo, se enfrentó a una decisión imposible. Confiar en la tradición y en la bestia que les había dado vida durante tanto tiempo, o confiar en los datos de su hijo y aventurarse en el hielo abierto, lejos del calor del Behemoth, con la esperanza de encontrar otra manada.</p>
+<p>Joric, convencido de que algo iba mal con el Viejo Padre, decidió hacer lo impensable: acercarse a la criatura. Los Behemoths eran generalmente pacíficos, ignorando a los pequeños humanos que pululaban a su alrededor, pero acercarse demasiado se consideraba un suicidio.</p>
+<p>En su pequeño vehículo de exploración, Joric se deslizó por el flanco de la bestia. El calor era intenso, y el aire vibraba con el retumbar de los órganos internos de la criatura. Mientras se acercaba, vio la causa del cambio de rumbo. Una enorme herida supuraba en el costado del Behemoth, una lesión que no había sido causada por el terreno. Parecían marcas de garras, pero de un tamaño imposible. Y clavados en la herida había fragmentos de un metal que Joric reconoció: era el casco de una nave de exploración perdida hacía una década.</p>
+<p>De repente, el hielo a su alrededor estalló. Una criatura emergió de la nieve, una pesadilla de garras y quitina blanca como el hielo. Era un "Cosechador de Hielo", una especie depredadora que se creía extinta, conocida por cazar en las profundidades de las edades de hielo. Esta era la razón por la que los Behemoths migraban: no buscaban comida, huían de sus depredadores naturales. Y este Cosechador había herido al Viejo Padre, volviéndolo loco de dolor y miedo.</p>
+<p>Joric huyó, con el Cosechador pisándole los talones. En una persecución desesperada a través de los campos de hielo, usó su conocimiento del terreno para evadir a la bestia, enviando una transmisión frenética a su madre. "¡No es la ruta, es un depredador! ¡El Viejo Padre está herido, está llevando a la manada a una trampa!".</p>
+<p>Anya, al recibir el mensaje, tomó su decisión. Ordenó a la Ciudad-Oruga que se detuviera y se preparara para el combate. Usando los enormes taladros de minería de la ciudad como armas improvisadas, se prepararon para hacer frente al Cosechador.</p>
+<p>Mientras tanto, Joric, en un acto de desesperación y valentía, dio la vuelta a su vehículo. Sabía que no podía matar al Cosechador, pero tal vez podría alejarlo del Behemoth. Disparó bengalas, creando un señuelo de calor y luz. La bestia, atraída por el objetivo más fácil, cambió de dirección y se lanzó hacia él.</p>
+<p>Joric condujo al Cosechador directamente hacia la Ciudad-Oruga. La criatura, ciega de furia, cayó en la trampa. Los taladros de minería se activaron, empalando a la bestia desde abajo mientras las armas láser de la ciudad la bombardeaban desde arriba.</p>
+<p>La batalla fue feroz, pero al final, la criatura cayó.</p>
+<p>Con el depredador muerto, el Viejo Padre, como si sintiera el cambio, se calmó. Lentamente, corrigió su rumbo, volviendo a los seguros Valles de Eco.</p>
+<p>Joric se convirtió en un héroe, pero la victoria dejó una profunda lección en la colonia. Ya no se veían a sí mismos como simples seguidores de los Behemoths, sino como sus guardianes. Comenzaron a estudiar a las criaturas, no solo sus rutas, sino su biología, sus enfermedades, sus enemigos. Se dieron cuenta de que su simbiosis no era una de dependencia, sino de asociación. Para sobrevivir en la Frontera de Hielo, no bastaba con seguir el calor; tenían que proteger la fuente de su llama.</p>
+                <div class="author-info">
+                    <em>Por M. Vinicio</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+        </div>
+    </div>
+</body>
+</html>

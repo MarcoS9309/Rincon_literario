@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Novena y Meditación Personal: Día Cuarto: María se Encuentra con Jesús Camino al Calvario por M. Vinicio">
+    <title>Día Cuarto: María se Encuentra con Jesús Camino al Calvario - Rincón Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+        
+        .author-info {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #34495e;
+            text-indent: 2.5rem;
+            position: relative;
+        }
+        
+        .story-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-indent: 0;
+        }
+        
+        .story-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin: 0.05em 0.3em 0 0;
+            color: #3498db;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos especiales para poemas */
+        .poem-content {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .poem-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .poem-content h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .poem-content p {
+            text-indent: 0;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .poem-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            line-height: 0.6;
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: fit-content;
+        }
+        
+        .footer {
+            padding: 30px 40px;
+            background: rgba(248, 249, 250, 0.8);
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 25px;
+            }
+            
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .story-content p:first-of-type::first-letter,
+            .poem-content p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .footer { 
+                display: none; 
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                background: white;
+            }
+            .content {
+                padding: 0;
+                animation: none;
+            }
+            .content h1::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navigation">
+                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="javascript:history.back()" class="nav-link">← Atrás</a>
+                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+            </nav>
+            <div class="category-badge">Novena y Meditación Personal</div>
+        </div>
+        
+        <div class="content">
+            <div class="story-content">
+                <h1>Día Cuarto: María se Encuentra con Jesús Camino al Calvario</h1>
+<p><strong>Por M. Vinicio</strong></p>
+<p>---</p>
+<h2>Antífona de Entrada</h2>
+<p>(Cf. Lm 1, 12) <em>«¡Ustedes, todos los que pasan por el camino, miren y vean si hay un dolor semejante al dolor que me atormenta!».</em></p>
+<p>---</p>
+<h2>Oraciones Iniciales</h2>
+<p><strong>Por la señal de la Santa Cruz...</strong></p>
+<p><strong>Acto de Contrición</strong> Señor mío, Jesucristo, Dios y Hombre verdadero, Creador, Padre y Redentor mío; por ser quien eres, Bondad infinita, y porque te amo sobre todas las cosas, me pesa de todo corazón haberte ofendido; también me pesa porque puedes castigarme con las penas del infierno. Ayudado de tu divina gracia, propongo firmemente nunca más pecar, confesarme y cumplir la penitencia que me sea impuesta. Amén.</p>
+<p><strong>Oración Colecta</strong> Señor, tú que has querido que la Madre compartiera los dolores de tu Hijo al pie de la cruz; haz que la Iglesia, asociándose con María a la pasión de Cristo, merezca participar de su resurrección. Por nuestro Señor Jesucristo, tu Hijo, que vive y reina contigo en la unidad del Espíritu Santo y es Dios por los siglos de los siglos. Amén.</p>
+<p>---</p>
+<h2>Meditación del Cuarto Dolor</h2>
+<p><strong>Lectura Breve (Cf. Lc 23, 27-28)</strong> Lo seguía una gran multitud del pueblo y de mujeres que se golpeaban el pecho y se lamentaban por él. Pero Jesús, volviéndose hacia ellas, les dijo: «¡Hijas de Jerusalén, no lloren por mí; lloren más bien por ustedes mismas y por sus hijos!».</p>
+<p><strong>Reflexión</strong> Contemplamos el cuarto dolor: el encuentro de María con su Hijo en el camino hacia el Calvario. Sus miradas se cruzan. No hacen falta palabras. En ese cruce de miradas se concentra todo el amor y todo el dolor del mundo. Es el sufrimiento de ver al ser amado padecer injustamente, sin poder hacer nada para aliviar su carga, más que ofrecer la propia presencia, la propia compasión silenciosa que se une al sacrificio del Redentor.</p>
+<p><em>Conexión:</em> Unimos este dolor al de tantas personas que sufren al ver a sus seres queridos enfermos o en dificultades. Oramos por los enfermos y por quienes los cuidan. También recordamos a la <strong>comunidad de Jerusalén</strong>, que cada día recorre espiritualmente esta Vía Dolorosa, manteniendo viva la memoria del sacrificio del <strong>Señor de Jerusalén</strong>.</p>
+<p>---</p>
+<h2>Peticiones del Día</h2>
+<p>1. Te rogamos, Madre Dolorosa, por todos los enfermos, especialmente por aquellos que padecen enfermedades crónicas, degenerativas o terminales. Que en tu mirada de compasión encuentren la fuerza para unir sus sufrimientos a los de Cristo en la Cruz y para vivir su enfermedad con un sentido de ofrenda. 2. Por los familiares y cuidadores de los enfermos, que cada día cargan con el peso del cansancio, la impotencia y el dolor compartido. Dales, Madre, la fortaleza de tu entereza y la ternura de tu corazón para que no desfallezcan y sirvan a Cristo en el rostro del que sufre. 3. Te pedimos por el personal sanitario: médicos, enfermeros, y todos los que trabajan en hospitales y centros de salud. Que su labor profesional sea también una misión de caridad, tratando a cada paciente con la dignidad y el respeto que merece, viendo en ellos al mismo Señor de Jerusalén sufriente. 4. Por la comunidad cristiana de Jerusalén, que custodia los Santos Lugares y recorre la Vía Dolorosa. Sostenlos en su fe y haz que su presencia en la tierra de Jesús sea un continuo recordatorio para el mundo del precio de nuestra redención. 5. Te encomendamos a quienes sufren a causa de la violencia, la guerra o la persecución. Que tu encuentro doloroso con Jesús en el camino al Calvario les dé la certeza de que no están solos en su vía crucis y de que Dios camina a su lado. 6. Por aquellos que, por su trabajo en la ciencia y la medicina, buscan aliviar el dolor humano. Ilumina su inteligencia para que encuentren nuevos tratamientos y curas para las enfermedades, y para que su trabajo esté siempre guiado por la ética y el respeto a la vida. 7. Te pedimos por los que sufren en soledad, sin tener a nadie que les dirija una mirada de compasión. Sé tú, Madre, su Cireneo, y envía a sus vidas personas que, con pequeños gestos, les ayuden a llevar su cruz. 8. Por nosotros, para que no seamos indiferentes ante el sufrimiento de nuestros hermanos. Ayúdanos a detenernos, a mirar con compasión y a estar presentes, aunque sea en silencio, ofreciendo nuestro apoyo y nuestra oración. 9. Te rogamos por los que han perdido la esperanza ante el peso de su cruz. Que el recuerdo de tu fortaleza al pie del madero les anime a levantarse y a seguir caminando, confiando en que, después del Calvario, llega la Resurrección. 10. Por la Iglesia, para que, siguiendo tu ejemplo, no tema acercarse a las cruces del mundo contemporáneo y anunciar con valentía que solo en Jesús se encuentra el consuelo, la sanación y la salvación.</p>
+<p>---</p>
+<h2>Profundizando en la Oración</h2>
+<p><strong>Oración a la Virgen Dolorosa por los que Sufren</strong> Oh, María, Madre de la compasión, que te encontraste con tu Hijo en el camino al Calvario y compartiste su dolor. Te pedimos por todos los que hoy cargan una cruz pesada: los enfermos, los oprimidos, los que sufren injusticia. Que tu mirada de amor les dé la fuerza para perseverar y la certeza de que no están solos. Inspíranos a ser Cirineos para nuestros hermanos, aliviando sus cargas con nuestra presencia y nuestro amor. Amén.</p>
+<p><strong>Contemplación Adicional</strong> El encuentro de María con Jesús en la Vía Dolorosa es un momento de profunda comunión en el sufrimiento. No hay palabras, solo miradas que lo dicen todo. Esta meditación nos invita a reflexionar sobre nuestra capacidad de acompañar a los que sufren. ¿Somos capaces de estar presentes, de mirar con compasión, de ofrecer nuestro silencio y nuestra oración a quienes cargan una cruz? La verdadera caridad no siempre requiere grandes acciones, a veces solo una presencia amorosa.</p>
+<p><strong>Cita para la Reflexión</strong> "El amor es la única fuerza capaz de transformar a un enemigo en amigo." - Martin Luther King Jr.</p>
+<p><strong>Petición General Adicional</strong> Te rogamos, Madre Dolorosa, por la conversión de los corazones endurecidos por el odio y la violencia. Que tu ejemplo de amor y perdón, incluso en el momento de mayor dolor, inspire a los hombres a buscar la reconciliación y a construir la paz en el mundo.</p>
+<p>---</p>
+<h2>Oraciones Finales</h2>
+<p><strong>Rezo</strong> Se recomienda rezar un Padrenuestro, siete Avemarías y un Gloria en meditación de este dolor. O bien, la cuarta parte de la secuencia <em>Stabat Mater</em>.</p>
+<p><strong>Oración Final</strong> Después de recibir el sacramento de la eterna redención, te pedimos, Señor, que, al recordar los dolores de la Virgen María, completemos en nosotros, en favor de la Iglesia, lo que falta a la pasión de Jesucristo. Él, que vive y reina por los siglos de los siglos. Amén.</p>
+                <div class="author-info">
+                    <em>Por M. Vinicio</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meditaciones: Santo Rosario de los Siete Dolores de la Santísima Virgen María por M. Vinicio">
+    <title>Santo Rosario de los Siete Dolores de la Santísima Virgen María - Rincón Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+        
+        .author-info {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #34495e;
+            text-indent: 2.5rem;
+            position: relative;
+        }
+        
+        .story-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-indent: 0;
+        }
+        
+        .story-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin: 0.05em 0.3em 0 0;
+            color: #3498db;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos especiales para poemas */
+        .poem-content {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .poem-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .poem-content h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .poem-content p {
+            text-indent: 0;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .poem-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            line-height: 0.6;
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: fit-content;
+        }
+        
+        .footer {
+            padding: 30px 40px;
+            background: rgba(248, 249, 250, 0.8);
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 25px;
+            }
+            
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .story-content p:first-of-type::first-letter,
+            .poem-content p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .footer { 
+                display: none; 
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                background: white;
+            }
+            .content {
+                padding: 0;
+                animation: none;
+            }
+            .content h1::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navigation">
+                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="javascript:history.back()" class="nav-link">← Atrás</a>
+                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+            </nav>
+            <div class="category-badge">Meditaciones</div>
+        </div>
+        
+        <div class="content">
+            <div class="story-content">
+                <h1>Santo Rosario de los Siete Dolores de la Santísima Virgen María</h1>
+<p><strong>Por M. Vinicio</strong></p>
+<p>Este Rosario es una devoción profunda que nos invita a meditar en los siete principales dolores que la Virgen María experimentó en su vida, desde la profecía de Simeón hasta la sepultura de su Hijo. Al contemplar sus sufrimientos, nos unimos a ella en su camino de fe y amor, y pedimos su intercesión para nuestras propias necesidades y las del mundo.</p>
+<p>---</p>
+<h3>Oraciones Iniciales</h3>
+<p><strong>Por la señal de la Santa Cruz...</strong></p>
+<p><strong>Acto de Contrición</strong> Señor mío, Jesucristo, Dios y Hombre verdadero, Creador, Padre y Redentor mío; por ser quien eres, Bondad infinita, y porque te amo sobre todas las cosas, me pesa de todo corazón haberte ofendido; también me pesa porque puedes castigarme con las penas del infierno. Ayudado de tu divina gracia, propongo firmemente nunca más pecar, confesarme y cumplir la penitencia que me sea impuesta. Amén.</p>
+<p><strong>Oración Inicial</strong> Oh, Dios, que en la pasión de tu Hijo y en los dolores de su Madre, nos has mostrado el camino de la salvación, concédenos que, al meditar los sufrimientos de María, nos unamos más íntimamente a Cristo y, por su intercesión, alcancemos la gracia de perseverar en tu amor hasta el fin. Por Jesucristo, nuestro Señor. Amén.</p>
+<p>---</p>
+<h3>Los Siete Dolores de María</h3>
+<p>(Para cada dolor, se anuncia el misterio, se hace una breve meditación, se reza un Padrenuestro y siete Avemarías, y se concluye con una oración específica.)</p>
+<p>#### Primer Dolor: La Profecía de Simeón</p>
+<p><strong>Meditación:</strong> Contemplamos el dolor de María al escuchar la profecía de Simeón en el Templo: una espada de dolor atravesaría su alma. Este dolor inicial nos enseña la aceptación de la voluntad divina, incluso cuando esta implica sufrimiento y contradicción. María, desde el principio, se une al destino de su Hijo, el Señor de Jerusalén, que será signo de contradicción para muchos.</p>
+<p>Intención especial por la comunidad de la parroquia Jerusalén: Pedimos por la comunidad de la parroquia Jerusalén, para que, como María, acojan con fe las pruebas y desafíos que enfrentan. Que la profecía de Simeón les recuerde que la fe en Cristo, el Señor de Jerusalén, siempre implicará un camino de entrega y que su testimonio sea luz para todos.</p>
+<p>(Rezar un Padrenuestro y siete Avemarías)</p>
+<p><strong>Oración:</strong> Oh, Madre Dolorosa, por el dolor que sentiste al escuchar la profecía de Simeón, te pedimos la gracia de aceptar con fe la voluntad de Dios en nuestras vidas, especialmente en los momentos de prueba y oscuridad. Amén.</p>
+<p>---</p>
+<p>#### Segundo Dolor: La Huida a Egipto</p>
+<p><strong>Meditación:</strong> Contemplamos el dolor de María al huir con José y el Niño Jesús a Egipto, escapando de la persecución de Herodes. Es el dolor del exilio, de la incertidumbre, de la vida de refugiado. María experimenta la angustia de dejar su hogar y su tierra para proteger a su Hijo.</p>
+<p>Intención especial por la comunidad de la parroquia Jerusalén: Pedimos por la comunidad de la parroquia Jerusalén, para que sean solidarios con los migrantes y refugiados que llegan a su tierra. Que, recordando la huida de la Sagrada Familia, abran sus corazones y sus puertas a quienes buscan refugio y una vida digna, y sean un ejemplo de acogida y caridad.</p>
+<p>(Rezar un Padrenuestro y siete Avemarías)</p>
+<p><strong>Oración:</strong> Oh, Madre Dolorosa, por el dolor que sentiste al huir a Egipto, te pedimos por todos los migrantes y refugiados del mundo. Protégelos de los peligros, dales un hogar seguro y concédenos la gracia de ser instrumentos de tu amor y acogida para ellos. Amén.</p>
+<p>---</p>
+<p>#### Tercer Dolor: El Niño Perdido en el Templo</p>
+<p><strong>Meditación:</strong> Contemplamos el dolor de María y José al perder a Jesús en Jerusalén y buscarlo angustiados durante tres días. Es el dolor de la separación, de la incertidumbre y de la búsqueda incansable. María nos enseña la perseverancia en la búsqueda de Cristo, incluso cuando parece ausente.</p>
+<p>Intención especial por la comunidad de la parroquia Jerusalén: Pedimos por la comunidad de la parroquia Jerusalén, para que nunca pierdan a Jesús en su vida. Que lo busquen incansablemente en la oración, en los sacramentos y en el servicio a los demás, y que su parroquia sea un lugar donde todos puedan encontrar a Cristo, el Señor de Jerusalén.</p>
+<p>(Rezar un Padrenuestro y siete Avemarías)</p>
+<p><strong>Oración:</strong> Oh, Madre Dolorosa, por el dolor que sentiste al perder a Jesús en el Templo, te pedimos la gracia de buscar siempre a tu Hijo en nuestras vidas, especialmente cuando nos sentimos perdidos o alejados de Él. Amén.</p>
+<p>---</p>
+<p>#### Cuarto Dolor: María se Encuentra con Jesús Camino al Calvario</p>
+<p><strong>Meditación:</strong> Contemplamos el dolor de María al encontrarse con su Hijo, Jesús, cargando la cruz camino al Calvario. Es el dolor de la impotencia, de ver sufrir a un ser amado sin poder aliviar su carga. En este encuentro de miradas, María se une íntimamente a la Pasión de su Hijo, el Señor de Jerusalén.</p>
+<p>Intención especial por la comunidad de la parroquia Jerusalén: Pedimos por la comunidad de la parroquia Jerusalén, para que, al recorrer la Vía Dolorosa, se unan al sufrimiento de Cristo y de su Madre. Que sean consuelo para los que sufren en su ciudad y en el mundo, y que su fe les impulse a llevar la cruz de cada día con esperanza.</p>
+<p>(Rezar un Padrenuestro y siete Avemarías)</p>
+<p><strong>Oración:</strong> Oh, Madre Dolorosa, por el dolor que sentiste al encontrarte con Jesús camino al Calvario, te pedimos la gracia de acompañar a Cristo en el sufrimiento de nuestros hermanos, especialmente de los enfermos y los que cargan pesadas cruces. Amén.</p>
+<p>---</p>
+<p>#### Quinto Dolor: Jesús Muere en la Cruz</p>
+<p><strong>Meditación:</strong> Contemplamos el dolor de María al pie de la cruz, viendo a su Hijo morir. Es el dolor más agudo, la culminación de todos sus sufrimientos. María se mantiene en pie, unida al sacrificio redentor de Jesús, ofreciéndolo al Padre por la salvación de la humanidad. En ese momento, se convierte en Madre de todos nosotros.</p>
+<p>Intención especial por la comunidad de la parroquia Jerusalén: Pedimos por la comunidad de la parroquia Jerusalén, para que, al contemplar a Cristo crucificado, renueven su fe en el poder redentor de la Cruz. Que sean testigos de la esperanza en medio del dolor y que su parroquia sea un faro de fe para todos los que buscan a Dios en su ciudad.</p>
+<p>(Rezar un Padrenuestro y siete Avemarías)</p>
+<p><strong>Oración:</strong> Oh, Madre Dolorosa, por el dolor que sentiste al ver morir a Jesús en la Cruz, te pedimos la gracia de permanecer firmes en la fe en los momentos de mayor prueba y de unir nuestros sufrimientos a los de Cristo para la salvación del mundo. Amén.</p>
+<p>---</p>
+<p>#### Sexto Dolor: María Recibe el Cuerpo de Jesús</p>
+<p><strong>Meditación:</strong> Contemplamos el dolor de María al recibir en sus brazos el cuerpo sin vida de su Hijo, descendido de la cruz. Es la imagen de la Piedad, el dolor de la pérdida consumada, el vacío inmenso. María abraza el cuerpo de Aquel que era la Vida, y en ese abrazo, nos enseña a aceptar la muerte y a confiar en la promesa de la resurrección.</p>
+<p>Intención especial por la comunidad de la parroquia Jerusalén: Pedimos por la comunidad de la parroquia Jerusalén, para que, al contemplar a María con el cuerpo de Jesús, consuelen a los que lloran la pérdida de sus seres queridos. Que sean una comunidad que acompaña en el duelo y que anuncia la esperanza de la vida eterna.</p>
+<p>(Rezar un Padrenuestro y siete Avemarías)</p>
+<p><strong>Oración:</strong> Oh, Madre Dolorosa, por el dolor que sentiste al recibir el cuerpo de Jesús, te pedimos la gracia de consolar a los que sufren la pérdida de un ser querido y de confiar en que la muerte no es el final, sino el paso a la vida eterna. Amén.</p>
+<p>---</p>
+<p>#### Séptimo Dolor: El Entierro de Jesús</p>
+<p><strong>Meditación:</strong> Contemplamos el dolor de María al acompañar el cuerpo de Jesús hasta el sepulcro. Es el último adiós en la tierra, la despedida final. La piedra se cierra, y con ella, parece que toda esperanza se desvanece. Sin embargo, en el corazón de María, a pesar del dolor, arde la llama de la fe en la promesa de la Resurrección.</p>
+<p>Intención especial por la comunidad de la parroquia Jerusalén: Pedimos por la comunidad de la parroquia Jerusalén, para que, al recordar el entierro de Jesús, mantengan viva la esperanza en la Resurrección. Que su fe les impulse a ser luz en los momentos de oscuridad y a anunciar que Cristo ha vencido a la muerte.</p>
+<p>(Rezar un Padrenuestro y siete Avemarías)</p>
+<p><strong>Oración:</strong> Oh, Madre Dolorosa, por el dolor que sentiste al ver a Jesús en el sepulcro, te pedimos la gracia de mantener viva la esperanza en la Resurrección, incluso en los momentos más oscuros de nuestra vida. Amén.</p>
+<p>---</p>
+<h3>Oraciones Finales</h3>
+<p>(Rezar tres Avemarías en honor de las lágrimas de María)</p>
+<p><strong>Salve Regina</strong> Dios te salve, Reina y Madre de misericordia, vida, dulzura y esperanza nuestra; Dios te salve. A ti llamamos los desterrados hijos de Eva; a ti suspiramos, gimiendo y llorando en este valle de lágrimas. Ea, pues, Señora, abogada nuestra, vuelve a nosotros esos tus ojos misericordiosos; y después de este destierro, muéstranos a Jesús, fruto bendito de tu vientre. ¡Oh, clementísima, oh piadosa, oh dulce Virgen María!</p>
+<p><strong>Oración Final</strong> Oh, Dios, que en la pasión de tu Hijo y en los dolores de su Madre, nos has mostrado el camino de la salvación, concédenos que, al meditar los sufrimientos de María, nos unamos más íntimamente a Cristo y, por su intercesión, alcancemos la gracia de perseverar en tu amor hasta el fin. Por Jesucristo, nuestro Señor. Amén.</p>
+<p>---</p>
+<p>Que la meditación de los Dolores de María nos acerque más al Corazón de Jesús y nos impulse a vivir con mayor fe, esperanza y caridad.</p>
+                <div class="author-info">
+                    <em>Por M. Vinicio</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+        </div>
+    </div>
+</body>
+</html>

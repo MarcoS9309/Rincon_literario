@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Novena y Meditación Personal: Día Sexto: María Recibe el Cuerpo de Jesús por M. Vinicio">
+    <title>Día Sexto: María Recibe el Cuerpo de Jesús - Rincón Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+        
+        .author-info {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #34495e;
+            text-indent: 2.5rem;
+            position: relative;
+        }
+        
+        .story-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #2c3e50;
+            text-indent: 0;
+        }
+        
+        .story-content p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin: 0.05em 0.3em 0 0;
+            color: #3498db;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos especiales para poemas */
+        .poem-content {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .poem-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .poem-content h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .poem-content p {
+            text-indent: 0;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            font-size: 1.25rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .poem-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            line-height: 0.6;
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: fit-content;
+        }
+        
+        .footer {
+            padding: 30px 40px;
+            background: rgba(248, 249, 250, 0.8);
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 25px;
+            }
+            
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .story-content p:first-of-type::first-letter,
+            .poem-content p:first-of-type::first-letter {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .footer { 
+                display: none; 
+            }
+            .container { 
+                box-shadow: none; 
+                margin: 0;
+                background: white;
+            }
+            .content {
+                padding: 0;
+                animation: none;
+            }
+            .content h1::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navigation">
+                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="javascript:history.back()" class="nav-link">← Atrás</a>
+                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+            </nav>
+            <div class="category-badge">Novena y Meditación Personal</div>
+        </div>
+        
+        <div class="content">
+            <div class="story-content">
+                <h1>Día Sexto: María Recibe el Cuerpo de Jesús</h1>
+<p><strong>Por M. Vinicio</strong></p>
+<p>---</p>
+<h2>Antífona de Entrada</h2>
+<p>(Cf. Jn 19, 38) <em>José de Arimatea, que era discípulo de Jesús, pero en secreto por miedo a los judíos, pidió a Pilato autorización para retirar el cuerpo de Jesús. Y Pilato se lo concedió.</em></p>
+<p>---</p>
+<h2>Oraciones Iniciales</h2>
+<p><strong>Por la señal de la Santa Cruz...</strong></p>
+<p><strong>Acto de Contrición</strong> Señor mío, Jesucristo, Dios y Hombre verdadero, Creador, Padre y Redentor mío; por ser quien eres, Bondad infinita, y porque te amo sobre todas las cosas, me pesa de todo corazón haberte ofendido; también me pesa porque puedes castigarme con las penas del infierno. Ayudado de tu divina gracia, propongo firmemente nunca más pecar, confesarme y cumplir la penitencia que me sea impuesta. Amén.</p>
+<p><strong>Oración Colecta</strong> Señor, tú que has querido que la Madre compartiera los dolores de tu Hijo al pie de la cruz; haz que la Iglesia, asociándose con María a la pasión de Cristo, merezca participar de su resurrección. Por nuestro Señor Jesucristo, tu Hijo, que vive y reina contigo en la unidad del Espíritu Santo y es Dios por los siglos de los siglos. Amén.</p>
+<p>---</p>
+<h2>Meditación del Sexto Dolor</h2>
+<p><strong>Lectura Breve (Juan 19, 39-40)</strong> Fue también Nicodemo, el que anteriormente había ido a verle de noche, con una mezcla de mirra y áloe de unas cien libras. Tomaron el cuerpo de Jesús y lo envolvieron en vendas con los aromas, conforme a la costumbre judía de sepultar.</p>
+<p><strong>Reflexión</strong> Contemplamos el sexto dolor: María recibe en sus brazos el cuerpo sin vida de su Hijo. Es la imagen de la Piedad, la <em>Pietà</em>. El dolor se ha consumado, y ahora queda el vacío, el silencio y el cuerpo inerte de Aquel que era la Vida. Es el dolor de la pérdida irreparable, el abrazo final a un ser amado, el momento de la más profunda intimidad entre la Madre y el Hijo, ahora separados por la muerte.</p>
+<p><em>Conexión:</em> Unimos este dolor al de todos aquellos que han perdido a un ser querido, especialmente a los padres que han perdido a un hijo. Oramos para que, en medio de su aflicción, encuentren en María el consuelo y la certeza de que la muerte no tiene la última palabra. Pedimos también por la <strong>comunidad de Jerusalén</strong>, que custodia el Santo Sepulcro, lugar del silencio de Dios.</p>
+<p>---</p>
+<h2>Peticiones del Día</h2>
+<p>1. Oh, Madre de la Piedad, que sostuviste en tus brazos el cuerpo destrozado de tu Hijo, te rogamos por todos los que viven un duelo. Sostenlos también a ellos en tu regazo, consuela su corazón roto y enséñales a encontrar un sentido a su pérdida a la luz de la fe. 2. Por los padres y madres que lloran la muerte de un hijo. Nadie como tú conoce ese dolor. Te pedimos que les des la fortaleza para seguir viviendo y la esperanza cierta de que un día se reencontrarán con sus hijos en el abrazo eterno del Padre. 3. Te encomendamos a quienes han perdido a su cónyuge, el compañero de toda una vida. Alivia su soledad, ayúdales a reconstruir su vida y haz que sientan tu compañía y la de la comunidad cristiana en su viudez. 4. Por la comunidad cristiana de Jerusalén, que custodia el Santo Sepulcro, el lugar del gran silencio de Dios. Fortalece su fe y haz que su oración sea un faro de esperanza para toda la Iglesia, recordándonos que la tumba no es el final. 5. Te pedimos por aquellos que, ante la pérdida de un ser querido, se sienten tentados a la desesperación o a la pérdida de la fe. No permitas, Madre, que el dolor los separe de Dios, sino que, a través de él, puedan purificar su amor y su fe. 6. Por los que deben tomar decisiones difíciles sobre el final de la vida de sus seres queridos. Ilumínalos para que actúen siempre con caridad, respetando la dignidad de la persona hasta el último momento, y para que confíen en la misericordia de Dios. 7. Te rogamos por los científicos que investigan el cuerpo humano y las causas de la muerte. Que su trabajo les lleve a un profundo respeto por el misterio de la vida y les abra a la dimensión espiritual de la persona. 8. Por nosotros, para que aprendamos a vivir el desapego de las cosas y de las personas, no con frialdad, sino con la libertad de los hijos de Dios, sabiendo que nuestro único tesoro absoluto es Cristo. 9. Te pedimos por los que ayudan a otros a sobrellevar el duelo: psicólogos, consejeros, amigos. Dales la empatía y la sabiduría necesarias para acompañar sin juzgar y para ser un verdadero bálsamo en medio del dolor. 10. Por la Iglesia, para que sepa acompañar a los que sufren, no solo con palabras, sino con una caridad activa y una presencia silenciosa y orante, reflejando así tu propio modo de estar al pie de la Cruz y en el momento del descendimiento.</p>
+<p>---</p>
+<h2>Profundizando en la Oración</h2>
+<p><strong>Oración a la Virgen Dolorosa por los que Sufren la Pérdida</strong> Oh, María, Madre de la Piedad, que recibiste en tus brazos el cuerpo sin vida de tu Hijo. Te pedimos por todos los que hoy sufren la pérdida de un ser querido, especialmente por aquellos que sienten que su vida se ha vaciado. Consuélalos con tu amor maternal, dales la fortaleza para aceptar la voluntad de Dios y la esperanza de que la muerte no es el final, sino el paso a la vida eterna. Amén.</p>
+<p><strong>Contemplación Adicional</strong> La imagen de María con Jesús muerto en sus brazos, la <em>Pietà</em>, es una de las más conmovedoras de la fe cristiana. Representa el dolor más profundo de una madre, pero también una aceptación serena y una fe inquebrantable. Esta meditación nos invita a reflexionar sobre cómo afrontamos nuestras propias pérdidas. ¿Nos aferramos al dolor o somos capaces de entregarlo a Dios, confiando en su plan de amor? La presencia de María nos enseña que incluso en el vacío más grande, la esperanza y el amor de Dios permanecen.</p>
+<p><strong>Cita para la Reflexión</strong> "El dolor es inevitable, el sufrimiento es opcional." - Buda</p>
+<p><strong>Petición General Adicional</strong> Te rogamos, Madre Dolorosa, por todos los que trabajan en el acompañamiento del duelo: psicólogos, consejeros, sacerdotes y voluntarios. Que tu sabiduría y tu compasión los guíen para ser instrumentos de consuelo y sanación para los corazones afligidos.</p>
+<p>---</p>
+<h2>Oraciones Finales</h2>
+<p><strong>Rezo</strong> Se recomienda rezar un Padrenuestro, siete Avemarías y un Gloria en meditación de este dolor. O bien, la sexta parte de la secuencia <em>Stabat Mater</em>.</p>
+<p><strong>Oración Final</strong> Después de recibir el sacramento de la eterna redención, te pedimos, Señor, que, al recordar los dolores de la Virgen María, completemos en nosotros, en favor de la Iglesia, lo que falta a la pasión de Jesucristo. Él, que vive y reina por los siglos de los siglos. Amén.</p>
+                <div class="author-info">
+                    <em>Por M. Vinicio</em>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+        </div>
+    </div>
+</body>
+</html>
