@@ -2,7 +2,7 @@
 
 **Por M. Vinicio**
 
-Un sitio web estático dedicado a la literatura, la poesía y la meditación espiritual.
+🌟 Un sitio web estático dedicado a la literatura, la poesía y la meditación espiritual.
 
 ## 📚 Contenido
 
