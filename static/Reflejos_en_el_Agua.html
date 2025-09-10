@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Poemas: Reflejos en el Agua por M. Vinicio">
     <title>Reflejos en el Agua - Rincón Literario</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -271,7 +276,7 @@
     <div class="container">
         <div class="header">
             <nav class="navigation">
-                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="../index.html" class="nav-link">🏠 Inicio</a>
                 <a href="javascript:history.back()" class="nav-link">← Atrás</a>
                 <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
             </nav>

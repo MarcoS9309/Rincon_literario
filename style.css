@@ -10,27 +10,27 @@
     --shadow-light: rgba(0, 0, 0, 0.05);
     --shadow-medium: rgba(0, 0, 0, 0.2);
     --border-radius: 8px;
-    --transition-speed: 0.3s;
+    --transition: all 0.3s ease;
     --sidebar-width: clamp(280px, 25vw, 350px);
-    --mobile-breakpoint: 768px;
     --content-padding: clamp(20px, 5vw, 60px) clamp(30px, 8vw, 80px);
-    --content-padding-mobile: 20px;
     --font-size-base: clamp(14px, 2vw, 16px);
     --font-size-large: clamp(18px, 3vw, 22px);
     --line-height-base: 1.6;
     --line-height-loose: 1.8;
 }
 
-/* Smooth scrolling for better UX */
+/* Base styles and resets */
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Reduce motion for users who prefer it */
+/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
@@ -39,7 +39,7 @@ html {
 }
 
 body {
-    font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lato', 'Segoe UI', sans-serif;
     margin: 0;
     background-color: var(--background-primary);
     color: var(--text-primary);
@@ -95,7 +95,7 @@ body {
     width: 30%;
     height: 2px;
     background: linear-gradient(90deg, var(--primary-color), transparent);
-    transition: width var(--transition-speed) ease;
+    transition: width var(--transition);
 }
 
 #toc h2:hover::after {

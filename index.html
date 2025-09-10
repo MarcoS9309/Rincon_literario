@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Seguridad -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
     <!-- SEO y Metadatos -->
     <title>Rincón Literario - Literatura, Poesía y Meditación Espiritual</title>
     <meta name="description" content="Colección personal de M. Vinicio: 44 obras literarias incluyendo historias, cuentos de ciencia ficción, poemas líricos y meditaciones espirituales. Sitio web estático con navegación intuitiva.">
@@ -24,8 +31,14 @@
     <!-- Favicon y iconos -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjNGY0NmU1Ii8+CjxwYXRoIGQ9Ik04IDEwaDEydjJIOHYtMnptMCA0aDEwdjJIOHYtMnptMCA0aDE2djJIOHYtMnptMCA0aDE0djJIOHYtMnoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=">
     
-    <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Fuentes con optimización de carga -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Estilos específicos para la versión estática */
@@ -230,21 +243,21 @@
                     con dedicación y representa un fragmento de la experiencia humana y la creatividad literaria.
                 </p>
                 
-                <div class="stats-grid">
+                <div class="stats-grid" role="region" aria-label="Estadísticas del contenido">
                     <div class="stat-card">
-                        <span class="stat-number">15</span>
+                        <span class="stat-number" aria-label="Quince">15</span>
                         <div class="stat-label">Cuentos</div>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number">10</span>
+                        <span class="stat-number" aria-label="Diez">10</span>
                         <div class="stat-label">Poemas</div>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number">7</span>
+                        <span class="stat-number" aria-label="Siete">7</span>
                         <div class="stat-label">Historias</div>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number">12</span>
+                        <span class="stat-number" aria-label="Doce">12</span>
                         <div class="stat-label">Meditaciones</div>
                     </div>
                 </div>

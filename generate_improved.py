@@ -3,8 +3,19 @@ import json
 import os
 import re
 
+def sanitize_html_content(text):
+    """Sanitiza contenido HTML para prevenir XSS"""
+    import html
+    # Solo escapar si no contiene etiquetas HTML válidas
+    if not re.search(r'<[^>]+>', text):
+        text = html.escape(text)
+    return text
+
 def markdown_to_html(markdown_text):
-    """Convierte markdown básico a HTML"""
+    """Convierte markdown básico a HTML con seguridad mejorada"""
+    if not markdown_text or not isinstance(markdown_text, str):
+        return ""
+    
     html = markdown_text
     
     # Títulos
@@ -52,26 +63,42 @@ def markdown_to_html(markdown_text):
     return '\n'.join(result)
 
 def create_static_page(item, markdown_content):
-    """Crea una página HTML estática para un item"""
+    """Crea una página HTML estática para un item con seguridad mejorada"""
+    
+    # Validar inputs
+    if not item or not isinstance(item, dict):
+        raise ValueError("Item inválido")
+    
+    if not markdown_content or not isinstance(markdown_content, str):
+        raise ValueError("Contenido markdown inválido")
     
     # Convertir markdown a HTML
     html_content = markdown_to_html(markdown_content)
     
     # Determinar si es un poema
-    is_poem = 'poemas' in item['path']
+    is_poem = 'poemas' in item.get('path', '')
     content_class = 'poem-content' if is_poem else 'story-content'
     
-    # Extraer título
+    # Extraer título de manera segura
     title_match = re.search(r'^# (.+)$', markdown_content, re.MULTILINE)
-    title = title_match.group(1) if title_match else item['title']
+    title = title_match.group(1) if title_match else item.get('title', 'Sin título')
+    title = sanitize_html_content(title)
     
-    # Template HTML mejorado
+    # Sanitizar categoría
+    category = sanitize_html_content(item.get('category', 'Sin categoría'))
+    
+    # Template HTML mejorado con CSP y seguridad
     html_template = f'''<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{item['category']}: {title} por M. Vinicio">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="{category}: {title} por M. Vinicio">
     <title>{title} - Rincón Literario</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -339,11 +366,11 @@ def create_static_page(item, markdown_content):
     <div class="container">
         <div class="header">
             <nav class="navigation">
-                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="../index.html" class="nav-link">🏠 Inicio</a>
                 <a href="javascript:history.back()" class="nav-link">← Atrás</a>
                 <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
             </nav>
-            <div class="category-badge">{item['category']}</div>
+            <div class="category-badge">{category}</div>
         </div>
         
         <div class="content">
@@ -364,45 +391,88 @@ def create_static_page(item, markdown_content):
     
     return html_template
 
+def safe_filename(title):
+    """Genera un nombre de archivo seguro"""
+    if not title or not isinstance(title, str):
+        return "unknown"
+    
+    # Remover caracteres peligrosos y no válidos
+    filename = re.sub(r'[<>:"|?*\\\/]', '_', title)
+    filename = re.sub(r'[^\w\s-]', '', filename)
+    filename = re.sub(r'\s+', '_', filename.strip())
+    
+    # Limitar longitud
+    if len(filename) > 100:
+        filename = filename[:100]
+    
+    return filename if filename else "unknown"
+
 def main():
-    # Cargar la base de datos
-    with open('database.json', 'r', encoding='utf-8') as f:
-        data = json.load(f)
+    """Función principal con manejo de errores mejorado"""
+    try:
+        # Cargar la base de datos
+        if not os.path.exists('database.json'):
+            raise FileNotFoundError("database.json no encontrado")
+            
+        with open('database.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        if not isinstance(data, list):
+            raise ValueError("database.json debe contener una lista")
+        
+        # Crear directorio static si no existe
+        os.makedirs('static', exist_ok=True)
+        
+        success_count = 0
+        error_count = 0
+        
+        for item in data:
+            try:
+                # Validar estructura del item
+                if not isinstance(item, dict):
+                    raise ValueError("Item debe ser un diccionario")
+                
+                required_fields = ['title', 'path']
+                for field in required_fields:
+                    if field not in item:
+                        raise ValueError(f"Campo requerido '{field}' no encontrado")
+                
+                # Verificar que el archivo fuente existe
+                if not os.path.exists(item['path']):
+                    raise FileNotFoundError(f"Archivo fuente no encontrado: {item['path']}")
+                
+                # Leer el archivo markdown
+                with open(item['path'], 'r', encoding='utf-8') as f:
+                    markdown_content = f.read()
+                
+                # Crear la página HTML
+                html_content = create_static_page(item, markdown_content)
+                
+                # Guardar la página con nombre seguro
+                filename = safe_filename(item['title'])
+                html_filename = f"static/{filename}.html"
+                
+                with open(html_filename, 'w', encoding='utf-8') as f:
+                    f.write(html_content)
+                
+                print(f"✓ {html_filename}")
+                success_count += 1
+                
+            except Exception as e:
+                print(f"✗ Error procesando {item.get('title', 'desconocido')}: {e}")
+                error_count += 1
+        
+        print(f"\n🎉 Generación completada:")
+        print(f"   ✓ {success_count} páginas generadas exitosamente")
+        if error_count > 0:
+            print(f"   ✗ {error_count} errores encontrados")
+            
+    except Exception as e:
+        print(f"Error fatal: {e}")
+        return 1
     
-    # Crear directorio static si no existe
-    os.makedirs('static', exist_ok=True)
-    
-    success_count = 0
-    error_count = 0
-    
-    for item in data:
-        try:
-            # Leer el archivo markdown
-            with open(item['path'], 'r', encoding='utf-8') as f:
-                markdown_content = f.read()
-            
-            # Crear la página HTML
-            html_content = create_static_page(item, markdown_content)
-            
-            # Guardar la página
-            filename = item['title'].replace(' ', '_').replace('/', '_').replace('\\', '_')
-            filename = re.sub(r'[<>:"|?*]', '_', filename)  # Caracteres no válidos en nombres de archivo
-            html_filename = f"static/{filename}.html"
-            
-            with open(html_filename, 'w', encoding='utf-8') as f:
-                f.write(html_content)
-            
-            print(f"✓ {html_filename}")
-            success_count += 1
-            
-        except Exception as e:
-            print(f"✗ Error procesando {item['title']}: {e}")
-            error_count += 1
-    
-    print(f"\n🎉 Generación completada:")
-    print(f"   ✓ {success_count} páginas generadas exitosamente")
-    if error_count > 0:
-        print(f"   ✗ {error_count} errores encontrados")
+    return 0
 
 if __name__ == "__main__":
-    main()
+    exit_code = main()
+    exit(exit_code)
