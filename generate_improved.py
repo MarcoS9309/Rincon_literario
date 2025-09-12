@@ -339,7 +339,7 @@ def create_static_page(item, markdown_content):
     <div class="container">
         <div class="header">
             <nav class="navigation">
-                <a href="../index_static.html" class="nav-link">🏠 Inicio</a>
+                <a href="../index.html" class="nav-link">🏠 Inicio</a>
                 <a href="javascript:history.back()" class="nav-link">← Atrás</a>
                 <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
             </nav>
