@@ -3,106 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cuentos: El Arquitecto de Sueños por M. Vinicio">
-    <title>El Arquitecto de Sueños - Rincón Literario</title>
+    
+    <!-- SEO y Metadatos -->
+    <title>El Arquitecto de Sueños - Rincón Literario - Literatura, Poesía y Meditación Espiritual</title>
+    <meta name="description" content="El Arquitecto de Sueños por M. Vinicio - Cuentos de ciencia ficción y fantasía que transportan al lector a mundos imaginarios.">
+    <meta name="keywords" content="El Arquitecto de Sueños, literatura, poesía, cuentos, historias, meditación, rosario, novena, M. Vinicio, ficción, narrativa">
+    <meta name="author" content="M. Vinicio">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="El Arquitecto de Sueños - Rincón Literario - Literatura, Poesía y Meditación Espiritual">
+    <meta property="og:description" content="El Arquitecto de Sueños por M. Vinicio - Cuentos de ciencia ficción y fantasía que transportan al lector a mundos imaginarios.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="El Arquitecto de Sueños - Rincón Literario - Literatura, Poesía y Meditación Espiritual">
+    <meta name="twitter:description" content="El Arquitecto de Sueños por M. Vinicio - Cuentos de ciencia ficción y fantasía que transportan al lector a mundos imaginarios.">
+    
+    <!-- Favicon y iconos -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjNGY0NmU1Ii8+CjxwYXRoIGQ9Ik04IDEwaDEydjJIOHYtMnptMCA0aDEwdjJIOHYtMnptMCA0aDE2djJIOHYtMnptMCA0aDE0djJIOHYtMnoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=">
+    
+    <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="../style.css">
+<style>
+        /* Estilos mejorados para páginas individuales */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #4f46e5;
+            --accent-color: #06d6a0;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
         body {
-            font-family: 'Lato', sans-serif;
-            min-height: 100vh;
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #2c3e50;
-            line-height: 1.6;
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.7;
         }
         
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            min-height: 100vh;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
-            position: relative;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
-            color: white;
-            padding: 30px 40px;
-            position: relative;
+            max-width: 900px;
+            margin: 20px auto;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 40px var(--shadow-medium);
             overflow: hidden;
+            animation: slideUp 0.6s ease-out;
         }
         
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
-                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
-            opacity: 0.6;
-        }
-        
-        .navigation {
-            position: relative;
-            z-index: 2;
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .nav-link {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            font-weight: 300;
-            backdrop-filter: blur(5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .category-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .content {
-            padding: 50px;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        @keyframes fadeInUp {
+        @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -113,120 +78,193 @@
             }
         }
         
+        .header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .navigation {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .content {
+            padding: 40px;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .content h1 {
             font-family: 'Playfair Display', serif;
-            color: #2c3e50;
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
             position: relative;
+            line-height: 1.2;
         }
         
         .content h1::after {
             content: '';
             position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: 100px;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
             height: 4px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
             border-radius: 2px;
         }
         
-        .author-info {
-            color: #7f8c8d;
-            font-style: italic;
+        .content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin: 30px 0 20px 0;
+            font-weight: 600;
+        }
+        
+        .content h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        .content p {
             font-size: 1.1rem;
-            margin-bottom: 40px;
-            padding: 15px;
-            background: rgba(52, 152, 219, 0.05);
-            border-left: 4px solid #3498db;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .story-content p {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            margin-bottom: 2rem;
+            margin-bottom: 20px;
             text-align: justify;
-            color: #34495e;
-            text-indent: 2.5rem;
-            position: relative;
+            color: var(--text-secondary);
         }
         
-        .story-content p:first-of-type {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #2c3e50;
-            text-indent: 0;
-        }
-        
-        .story-content p:first-of-type::first-letter {
+        .story-content p:first-of-type::first-letter,
+        .poem-content p:first-of-type::first-letter {
             font-family: 'Playfair Display', serif;
             font-size: 4.5rem;
-            line-height: 0.8;
-            float: left;
-            margin: 0.05em 0.3em 0 0;
-            color: #3498db;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Estilos especiales para poemas */
-        .poem-content {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .poem-content h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .poem-content h1::after {
-            left: 50%;
-            transform: translateX(-50%);
+            line-height: 1;
+            float: left;
+            margin: 0 8px 0 0;
+            color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .poem-content p {
-            text-indent: 0;
-            margin-bottom: 2rem;
-            line-height: 2.2;
-            font-size: 1.25rem;
-            color: #2c3e50;
+            text-align: left;
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .meditation-content p {
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .author-info {
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-color);
             text-align: center;
         }
         
-        .poem-content p:first-of-type::first-letter {
-            font-size: 5rem;
-            line-height: 0.6;
-            float: none;
-            display: block;
-            margin: 0 auto 20px auto;
-            width: fit-content;
+        .author-info em {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-style: italic;
         }
         
         .footer {
-            padding: 30px 40px;
-            background: rgba(248, 249, 250, 0.8);
-            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            background: var(--bg-secondary);
+            padding: 20px;
             text-align: center;
-            color: #6c757d;
+            color: var(--text-secondary);
             font-size: 0.9rem;
-            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
         
-        /* Responsive */
+        /* Responsivo */
         @media (max-width: 768px) {
             .container {
-                margin: 0;
-                border-radius: 0;
+                margin: 10px;
+                border-radius: 8px;
             }
             
-            .header, .content {
+            .content {
                 padding: 25px;
             }
             

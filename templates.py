@@ -1,33 +1,47 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+"""
+HTML Templates for Rincón Literario Static Site Generator
+Author: M. Vinicio
+"""
+
+from config import SITE_CONFIG, TEMPLATE_CONFIG
+
+def get_html_head(title=None, description=None, keywords=None):
+    """Generate HTML head section with meta tags and CSS"""
+    page_title = title if title else SITE_CONFIG["title"]
+    page_description = description if description else SITE_CONFIG["description"]
+    page_keywords = keywords if keywords else SITE_CONFIG["keywords"]
+    
+    return f'''<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO y Metadatos -->
-    <title>Abuelito - Rincón Literario - Literatura, Poesía y Meditación Espiritual</title>
-    <meta name="description" content="Abuelito por M. Vinicio - Relatos narrativos personales y ficticios que exploran temas universales de la experiencia humana.">
-    <meta name="keywords" content="Abuelito, literatura, poesía, cuentos, historias, meditación, rosario, novena, M. Vinicio, ficción, narrativa">
-    <meta name="author" content="M. Vinicio">
+    <title>{page_title}</title>
+    <meta name="description" content="{page_description}">
+    <meta name="keywords" content="{page_keywords}">
+    <meta name="author" content="{SITE_CONFIG["author"]}">
     
     <!-- Open Graph para redes sociales -->
-    <meta property="og:title" content="Abuelito - Rincón Literario - Literatura, Poesía y Meditación Espiritual">
-    <meta property="og:description" content="Abuelito por M. Vinicio - Relatos narrativos personales y ficticios que exploran temas universales de la experiencia humana.">
+    <meta property="og:title" content="{page_title}">
+    <meta property="og:description" content="{page_description}">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale" content="{SITE_CONFIG["locale"]}">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Abuelito - Rincón Literario - Literatura, Poesía y Meditación Espiritual">
-    <meta name="twitter:description" content="Abuelito por M. Vinicio - Relatos narrativos personales y ficticios que exploran temas universales de la experiencia humana.">
+    <meta name="twitter:title" content="{page_title}">
+    <meta name="twitter:description" content="{page_description}">
     
     <!-- Favicon y iconos -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjNGY0NmU1Ii8+CjxwYXRoIGQ9Ik04IDEwaDEydjJIOHYtMnptMCA0aDEwdjJIOHYtMnptMCA0aDE2djJIOHYtMnptMCA0aDE0djJIOHYtMnoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,{TEMPLATE_CONFIG["favicon_svg"]}">
     
     <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
-<style>
+    <link href="{TEMPLATE_CONFIG["fonts"]}" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">'''
+
+def get_page_css():
+    """Generate page-specific CSS styles"""
+    return '''<style>
         /* Estilos mejorados para páginas individuales */
         * {
             margin: 0;
@@ -303,7 +317,14 @@
                 display: none;
             }
         }
-    </style>
+    </style>'''
+
+def get_page_template():
+    """Generate complete page template"""
+    return '''<!DOCTYPE html>
+<html lang="{language}">
+{head}
+{css}
 </head>
 <body>
     <div class="container">
@@ -311,36 +332,33 @@
             <nav class="navigation">
                 <a href="../index.html" class="nav-link">🏠 Inicio</a>
                 <a href="javascript:history.back()" class="nav-link">← Atrás</a>
-                <button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>
+                {print_button}
             </nav>
-            <div class="category-badge">Historias</div>
+            <div class="category-badge">{category}</div>
         </div>
         
         <div class="content">
-            <div class="story-content">
-                <h1>El Sikuri del abuelito</h1>
-<p><em>Por M. Vinicio</em></p>
-<p>El viento frío que bajaba de los Andes se colaba por las rendijas de la pequeña cabaña, silbando una melodía ancestral que Don Juan Bautista conocía bien. Sus manos, curtidas por años de trabajo en el campo y de abrazar la madera, acariciaban la pequeña figura tallada que reposaba sobre la repisa de la chimenea.</p>
-<h2>El Sikuri</h2>
-<p>Era un sikuri, un hombre de madera con un sombrero alón y un poncho raído, aferrado a su zampoña como si fuera la última ancla en medio de una tormenta. Don Juan Bautista lo había tallado hacía muchos años, en una época en que la música de los Andes resonaba con más fuerza en los corazones de su comunidad, aquí en las alturas de Biblián.</p>
-<p>Cada detalle de la figura evocaba recuerdos. El sombrero, como el que usaba su padre cuando iba al mercado de Azogues. El poncho, con las rayas que le recordaban los colores de la tierra y del cielo de su Cañar natal. Y la zampoña, esa hilera de cañas que en sus manos expertas se convertía en la voz de los ríos, de las montañas y de las historias de su pueblo.</p>
-<h2>La Nostalgia de un Legado</h2>
-<p>Don Juan Bautista suspiró. Los jóvenes preferían ahora la música que llegaba de lejos, las modas pasajeras que no tenían raíz en la tierra que pisaban. El sonido de la zampoña se escuchaba cada vez menos en las fiestas y en las reuniones comunitarias. Sentía que con cada nota que se apagaba, una parte de su alma se desvanecía también.</p>
-<p>Tomó la figura con cuidado, sintiendo la textura áspera de la madera bajo sus dedos. Recordó las manos de su abuelo enseñándole a cortar las cañas con el ángulo preciso, a unirlas con hilo de lana y a soplar con el alma para extraerles el sonido. Eran lecciones de música, pero también lecciones de vida, de conexión con la naturaleza y con sus ancestros.</p>
-<h2>La Melodía del Atardecer</h2>
-<p>Se levantó con dificultad y caminó hacia la ventana. La luz del atardecer teñía las colinas de un dorado melancólico. Cerró los ojos y llevó el pequeño sikuri a sus labios, como si fuera él quien pudiera insuflar vida a la madera inerte. Intentó recordar la melodía antigua, la que hablaba de la Pachamama y del ciclo eterno de la vida y la muerte.</p>
-<p>Una nota temblorosa escapó de sus labios, seguida de otra, más segura. El sonido, aunque débil, llenó la cabaña con una resonancia olvidada. No era el sonido potente y alegre de antaño, pero era una semilla, un pequeño eco de un legado que se negaba a morir.</p>
-<h2>Un Legado que Perdura</h2>
-<p>Don Juan Bautista sonrió con tristeza y esperanza. Quizás, solo quizás, si él seguía soplando, si seguía recordando las melodías antiguas, alguien más las escucharía. Quizás, en algún rincón de su comunidad, otro corazón joven sentiría la llamada ancestral de la zampoña y la música volvería a danzar en el viento andino. Y su pequeño sikuri de madera, el guardián de las melodías olvidadas, seguiría contando su historia silenciosa sobre la repisa de la chimenea.</p>
-                <div class="author-info">
-                    <em>Por M. Vinicio</em>
-                </div>
+            <div class="{content_class}">
+                {html_content}
+                {author_info}
             </div>
         </div>
         
         <div class="footer">
-            <p>© 2025 Rincón Literario - M. Vinicio | Obra original</p>
+            <p>{copyright}</p>
         </div>
     </div>
 </body>
-</html>
+</html>'''
+
+def get_print_button():
+    """Generate print button if enabled"""
+    if TEMPLATE_CONFIG["enable_print"]:
+        return '<button onclick="window.print()" class="nav-link" style="background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;">🖨️ Imprimir</button>'
+    return ""
+
+def get_author_info():
+    """Generate author info section"""
+    return f'''<div class="author-info">
+                    <em>Por {SITE_CONFIG["author"]}</em>
+                </div>'''

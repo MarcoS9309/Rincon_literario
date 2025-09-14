@@ -3,106 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meditaciones: Santo Rosario: Guía Completa y Oraciones por M. Vinicio">
-    <title>Santo Rosario: Guía Completa y Oraciones - Rincón Literario</title>
+    
+    <!-- SEO y Metadatos -->
+    <title>Santo Rosario Guía - Rincón Literario - Literatura, Poesía y Meditación Espiritual</title>
+    <meta name="description" content="Santo Rosario Guía por M. Vinicio - Guías espirituales para el rezo del Santo Rosario y meditaciones religiosas.">
+    <meta name="keywords" content="Santo Rosario Guía, literatura, poesía, cuentos, historias, meditación, rosario, novena, M. Vinicio, ficción, narrativa">
+    <meta name="author" content="M. Vinicio">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Santo Rosario Guía - Rincón Literario - Literatura, Poesía y Meditación Espiritual">
+    <meta property="og:description" content="Santo Rosario Guía por M. Vinicio - Guías espirituales para el rezo del Santo Rosario y meditaciones religiosas.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Santo Rosario Guía - Rincón Literario - Literatura, Poesía y Meditación Espiritual">
+    <meta name="twitter:description" content="Santo Rosario Guía por M. Vinicio - Guías espirituales para el rezo del Santo Rosario y meditaciones religiosas.">
+    
+    <!-- Favicon y iconos -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjNGY0NmU1Ii8+CjxwYXRoIGQ9Ik04IDEwaDEydjJIOHYtMnptMCA0aDEwdjJIOHYtMnptMCA0aDE2djJIOHYtMnptMCA0aDE0djJIOHYtMnoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=">
+    
+    <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="../style.css">
+<style>
+        /* Estilos mejorados para páginas individuales */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #4f46e5;
+            --accent-color: #06d6a0;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
         body {
-            font-family: 'Lato', sans-serif;
-            min-height: 100vh;
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #2c3e50;
-            line-height: 1.6;
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.7;
         }
         
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            min-height: 100vh;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
-            position: relative;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #4a627a 100%);
-            color: white;
-            padding: 30px 40px;
-            position: relative;
+            max-width: 900px;
+            margin: 20px auto;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 40px var(--shadow-medium);
             overflow: hidden;
+            animation: slideUp 0.6s ease-out;
         }
         
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), 
-                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
-            opacity: 0.6;
-        }
-        
-        .navigation {
-            position: relative;
-            z-index: 2;
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .nav-link {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            font-weight: 300;
-            backdrop-filter: blur(5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .category-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .content {
-            padding: 50px;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        @keyframes fadeInUp {
+        @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -113,120 +78,193 @@
             }
         }
         
+        .header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .navigation {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .content {
+            padding: 40px;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .content h1 {
             font-family: 'Playfair Display', serif;
-            color: #2c3e50;
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
             position: relative;
+            line-height: 1.2;
         }
         
         .content h1::after {
             content: '';
             position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: 100px;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
             height: 4px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
             border-radius: 2px;
         }
         
-        .author-info {
-            color: #7f8c8d;
-            font-style: italic;
+        .content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin: 30px 0 20px 0;
+            font-weight: 600;
+        }
+        
+        .content h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        .content p {
             font-size: 1.1rem;
-            margin-bottom: 40px;
-            padding: 15px;
-            background: rgba(52, 152, 219, 0.05);
-            border-left: 4px solid #3498db;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .story-content p {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            margin-bottom: 2rem;
+            margin-bottom: 20px;
             text-align: justify;
-            color: #34495e;
-            text-indent: 2.5rem;
-            position: relative;
+            color: var(--text-secondary);
         }
         
-        .story-content p:first-of-type {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #2c3e50;
-            text-indent: 0;
-        }
-        
-        .story-content p:first-of-type::first-letter {
+        .story-content p:first-of-type::first-letter,
+        .poem-content p:first-of-type::first-letter {
             font-family: 'Playfair Display', serif;
             font-size: 4.5rem;
-            line-height: 0.8;
-            float: left;
-            margin: 0.05em 0.3em 0 0;
-            color: #3498db;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Estilos especiales para poemas */
-        .poem-content {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .poem-content h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .poem-content h1::after {
-            left: 50%;
-            transform: translateX(-50%);
+            line-height: 1;
+            float: left;
+            margin: 0 8px 0 0;
+            color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .poem-content p {
-            text-indent: 0;
-            margin-bottom: 2rem;
-            line-height: 2.2;
-            font-size: 1.25rem;
-            color: #2c3e50;
+            text-align: left;
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .meditation-content p {
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .author-info {
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-color);
             text-align: center;
         }
         
-        .poem-content p:first-of-type::first-letter {
-            font-size: 5rem;
-            line-height: 0.6;
-            float: none;
-            display: block;
-            margin: 0 auto 20px auto;
-            width: fit-content;
+        .author-info em {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-style: italic;
         }
         
         .footer {
-            padding: 30px 40px;
-            background: rgba(248, 249, 250, 0.8);
-            border-top: 1px solid rgba(222, 226, 230, 0.5);
+            background: var(--bg-secondary);
+            padding: 20px;
             text-align: center;
-            color: #6c757d;
+            color: var(--text-secondary);
             font-size: 0.9rem;
-            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
         
-        /* Responsive */
+        /* Responsivo */
         @media (max-width: 768px) {
             .container {
-                margin: 0;
-                border-radius: 0;
+                margin: 10px;
+                border-radius: 8px;
             }
             
-            .header, .content {
+            .content {
                 padding: 25px;
             }
             
@@ -279,7 +317,7 @@
         </div>
         
         <div class="content">
-            <div class="story-content">
+            <div class="meditation-content">
                 <h1>Santo Rosario: Guía Completa y Oraciones</h1>
 <p><strong>Por M. Vinicio</strong></p>
 <p>> Guía completa para el rezo del Santo Rosario, estructurada con encabezados, listas y citas para facilitar la lectura y la meditación.</p>
@@ -323,7 +361,7 @@
 <h3>Pasos para rezar el Rosario completo:</h3>
 <p>1.  </strong>Señal de la Cruz<strong> (en la Cruz del Rosario) 2.  </strong>Credo de los Apóstoles<strong> (en la Cruz) 3.  </strong>Padre Nuestro<strong> (en la primera cuenta grande) 4.  </strong>Tres Ave María<strong> (en las tres cuentas pequeñas) o </strong>El Ángelus<strong> 5.  </strong>Gloria<strong> (después de las tres Ave María) 6.  </strong>Anunciar el primer misterio<strong> y hacer breve meditación 7.  </strong>Padre Nuestro<strong> (en la cuenta grande) 8.  </strong>Diez Ave María<strong> (en las diez cuentas pequeñas) 9.  </strong>Gloria<strong> (después de las diez Ave María) 10. </strong>Jaculatoria de Fátima<strong> (opcional) 11. </strong>Repetir pasos 6-10<strong> para los misterios restantes 12. </strong>Salve Regina<strong> (al final) 13. </strong>Letanías<strong> (opcional)</p>
 <h3>Guía visual del Rosario:</h3>
-<p>``` [Cruz] - Señal de la Cruz + Credo | [Cuenta] - Padre Nuestro | [○ ○ ○] - Tres Ave María | [Gloria] - Una sola vez | ┌─[Cuenta]─┐ - Padre Nuestro (Primer Misterio) │ ○○○○○○○○○○ │ - Diez Ave María └─[Gloria]─┘ - Gloria + Jaculatoria | [Repetir 4 veces más] | [Salve Regina] ```</p>
+<p>``<code> [Cruz] - Señal de la Cruz + Credo | [Cuenta] - Padre Nuestro | [○ ○ ○] - Tres Ave María | [Gloria] - Una sola vez | ┌─[Cuenta]─┐ - Padre Nuestro (Primer Misterio) │ ○○○○○○○○○○ │ - Diez Ave María └─[Gloria]─┘ - Gloria + Jaculatoria | [Repetir 4 veces más] | [Salve Regina] </code>``</p>
 <p>---</p>
 <h2>Oraciones del Rosario</h2>
 <h3>El Santo Rosario — Secuencia general</h3>
@@ -332,15 +370,15 @@
 <p>> </strong>Por la señal<strong> de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</strong></p>
 <h3>Oración de invocación al Espíritu Santo</h3>
 <p><strong>Guía</strong>: "Pidamos al <strong>Espíritu Santo</strong> para que nos ilumine. Abramos el corazón para que nuestra Santísima Madre escuche cada petición, perdón o alabanza que vamos a realizar."</p>
-<p>#### Otras fórmulas de iniciación (opcionales)</p>
+<h4>Otras fórmulas de iniciación (opcionales)</h4>
 <p><strong>Al respecto</strong>, se pueden utilizar las siguientes invocaciones según las circunstancias:</p>
 <p></em><em><strong>"Ahora que estamos presentes en (…), invoquemos al </strong>Espíritu Santo<strong>. Recordemos que Dios solo puede actuar en nosotros si abrimos las puertas del corazón y le permitimos entrar. Aunque el dolor y las preocupaciones lo cierren, </strong>Él</em><em><strong>tiene solución: </strong>invoquémosle</em><strong>." </strong>"Hoy, al iniciar el Santo Rosario, invocamos al <strong>Espíritu Santo</strong>. Si por el pecado vemos nuestro interior manchado o endurecido, pidamos que su Agua bendita nos purifique<strong>." </strong><strong>"Pidamos al </strong>Espíritu de la verdad<strong> que nos ayude a tomar decisiones y elecciones que nos acerquen más a Dios." </strong>"En este momento de sufrimiento por (…), pidamos *<em><strong>descanso</strong> en Dios gracias a su Espíritu." </em><em><strong>"Traemos heridas que necesitan sanación: pidamos al Espíritu Santo que sea bálsamo</strong> y sane nuestro interior." </em><strong>"Ante el </strong>Santísimo Sacramento del Altar, pidamos al Espíritu Santo que <strong>vivifique</strong><strong> nuestro corazón."</p>
-<p>#### Invocaciones breves</p>
+<h4>Invocaciones breves</h4>
 <p>> </strong>Todos<strong> (después del guía):</p>
 <p>> “</strong>Ven, Espíritu Santo<strong>, llena los corazones de tus fieles y enciende en ellos el fuego de tu amor. Envía, Señor, tu Espíritu, y se </strong>renovará la faz de la tierra*<em><strong>.” ></p>
 <p>> “</strong>Ven, Espíritu Santo<strong>, introdúcete en mi corazón y </strong>abre las puertas</em><em><strong> hacia ti. Rompe y baja las barreras, para que pueda encontrarme con Dios.” ></p>
 <p>> “</strong>Ven, Espíritu Santo<strong>: ven a mi corazón, ven y desciende; sé Agua que me limpie, Luz que me ilumine, Bálsamo que me cure, Fuerza en mi camino, Descanso y Amor para mi corazón</strong>. Ven, Espíritu Santo, ven.”</p>
-<p>#### Oración</p>
+<h4>Oración</h4>
 <p>> ¡Oh Dios, que has instruido los corazones de tus fieles con la luz del Espíritu Santo, concédenos sentir rectamente con el mismo Espíritu y gozar siempre de su divino consuelo. Por Jesucristo, Nuestro Señor. <strong>Amén</strong>.</p>
 <p>> “Toda la existencia de María es un himno a la vida, un himno de amor a la vida: ha generado a Jesús en la carne y ha acompañado el nacimiento de la Iglesia en el Calvario y en el Cenáculo.” — <strong>Papa Francisco</strong></p>
 <h3>Significado del origen del Espíritu Santo (breve meditación)</h3>
@@ -415,92 +453,92 @@
 <p>1.  </strong>Anunciar el misterio<strong> 2.  </strong>Breve meditación bíblica<strong> 3.  </strong>Padre Nuestro<strong> 4.  </strong>Diez Ave María<strong> 5.  </strong>Gloria<strong> 6.  </strong>Jaculatoria a María<strong> 7.  </strong>Jaculatoria a la Virgen de Fátima<strong></p>
 <h3>Misterios Gozosos</h3>
 <p></strong> Se rezan los lunes y sábados</em><em><strong></p>
-<p>#### 1. La Anunciación del Ángel a María</p>
+<h4>1. La Anunciación del Ángel a María</h4>
 <p>> </strong>Meditación<strong>: El arcángel Gabriel anuncia a María que será la Madre de Dios. María responde con humildad: "Hágase en mí según tu palabra." ></p>
 <p>> </strong>Fruto del misterio<strong>: La humildad ></p>
 <p>> </strong>Cita bíblica<strong>: "El ángel le dijo: 'No temas, María, porque has hallado gracia ante Dios'" (Lc 1,30)</p>
-<p>#### 2. La Visitación de Nuestra Señora a Santa Isabel</p>
+<h4>2. La Visitación de Nuestra Señora a Santa Isabel</h4>
 <p>> </strong>Meditación<strong>: María visita a su prima Isabel, quien está embarazada de Juan el Bautista. Al escuchar el saludo de María, Juan salta de gozo en el vientre de su madre. ></p>
 <p>> </strong>Fruto del misterio<strong>: La caridad fraterna ></p>
 <p>> </strong>Cita bíblica<strong>: "Bendita tú eres entre todas las mujeres y bendito es el fruto de tu vientre" (Lc 1,42)</p>
-<p>#### 3. El Nacimiento del Hijo de Dios</p>
+<h4>3. El Nacimiento del Hijo de Dios</h4>
 <p>> </strong>Meditación<strong>: Jesús nace en Belén, en un humilde pesebre. Los ángeles anuncian la Buena Nueva a los pastores. ></p>
 <p>> </strong>Fruto del misterio<strong>: El espíritu de pobreza ></p>
 <p>> </strong>Cita bíblica<strong>: "Y dio a luz a su hijo primogénito, lo envolvió en pañales y lo acostó en un pesebre" (Lc 2,7)</p>
-<p>#### 4. La Presentación de Jesús en el Templo</p>
+<h4>4. La Presentación de Jesús en el Templo</h4>
 <p>> </strong>Meditación<strong>: María y José presentan al Niño Jesús en el Templo, cumpliendo la ley. Simeón y Ana reconocen al Mesías. ></p>
 <p>> </strong>Fruto del misterio<strong>: La obediencia ></p>
 <p>> </strong>Cita bíblica<strong>: "Mis ojos han visto tu salvación, que has preparado ante todos los pueblos" (Lc 2,30-31)</p>
-<p>#### 5. La Pérdida del Niño Jesús y su Hallazgo en el Templo</p>
+<h4>5. La Pérdida del Niño Jesús y su Hallazgo en el Templo</h4>
 <p>> </strong>Meditación<strong>: Jesús se queda en el Templo dialogando con los doctores. María y José lo buscan angustiados durante tres días. ></p>
 <p>> </strong>Fruto del misterio<strong>: La búsqueda de Jesús ></p>
 <p>> </strong>Cita bíblica<strong>: "¿No sabíais que debo ocuparme de las cosas de mi Padre?" (Lc 2,49)</p>
 <h3>Misterios Luminosos</h3>
 <p></strong><strong> Se rezan los jueves</strong></p>
 <p><strong>En relación a lo anterior</strong>, los Misterios Luminosos fueron introducidos por el Papa Juan Pablo II </em><em><strong>con el fin de</strong> contemplar la vida pública de Jesús.</p>
-<p>#### 1. El Bautismo de Jesús en el Jordán</p>
+<h4>1. El Bautismo de Jesús en el Jordán</h4>
 <p>> <strong>Meditación</strong>: Jesús es bautizado por Juan el Bautista. El Espíritu Santo desciende sobre Él y se escucha la voz del Padre. ></p>
 <p>> <strong>Fruto del misterio</strong>: La conversión ></p>
 <p>> <strong>Cita bíblica</strong>: "Este es mi Hijo amado, en quien me complazco" (Mt 3,17)</p>
-<p>#### 2. El Milagro de las Bodas de Caná</p>
+<h4>2. El Milagro de las Bodas de Caná</h4>
 <p>> <strong>Meditación</strong>: Por intercesión de María, Jesús realiza su primer milagro convirtiendo el agua en vino. ></p>
 <p>> <strong>Fruto del misterio</strong>: La intercesión de María ></p>
 <p>> <strong>Cita bíblica</strong>: </em><em><strong>"Haced lo que Él os diga"</strong> (Jn 2,5)</p>
-<p>#### 3. El Anuncio del Reino de Dios</p>
+<h4>3. El Anuncio del Reino de Dios</h4>
 <p>> <strong>Meditación</strong>: Jesús predica el Reino de Dios, llamando a la conversión y al perdón de los pecados. ></p>
 <p>> <strong>Fruto del misterio</strong>: La conversión del corazón ></p>
 <p>> <strong>Cita bíblica</strong>: "Convertíos, porque el Reino de los Cielos está cerca" (Mt 4,17)</p>
-<p>#### 4. La Transfiguración de Jesús</p>
+<h4>4. La Transfiguración de Jesús</h4>
 <p>> <strong>Meditación</strong>: Jesús se transfigura ante Pedro, Santiago y Juan, mostrando su gloria divina. ></p>
 <p>> <strong>Fruto del misterio</strong>: La contemplación ></p>
 <p>> <strong>Cita bíblica</strong>: "Su rostro se puso resplandeciente como el sol" (Mt 17,2)</p>
-<p>#### 5. La Institución de la Eucaristía</p>
+<h4>5. La Institución de la Eucaristía</h4>
 <p>> <strong>Meditación</strong>: En la Última Cena, Jesús instituye la Eucaristía, entregándose como alimento espiritual. ></p>
 <p>> <strong>Fruto del misterio</strong>: El amor eucarístico ></p>
 <p>> <strong>Cita bíblica</strong>: "Tomad y comed, este es mi Cuerpo" (Mt 26,26)</p>
 <h3>Misterios Dolorosos</h3>
 <p>Se rezan los martes y viernes</p>
 <p><strong>Sin embargo</strong>, cuando contemplamos los Misterios Dolorosos, </em><em><strong>debido a</strong> la Pasión de Cristo, meditamos sobre el sufrimiento redentor de nuestro Señor.</p>
-<p>#### 1. La Oración de Jesús en el Huerto</p>
+<h4>1. La Oración de Jesús en el Huerto</h4>
 <p>> <strong>Meditación</strong>: Jesús ora en Getsemaní, experimentando una profunda angustia por la Pasión que se avecina. ></p>
 <p>> <strong>Fruto del misterio</strong>: La conformidad con la voluntad de Dios ></p>
 <p>> <strong>Cita bíblica</strong>: "Padre, si quieres, aparta de mí esta copa; pero que no se haga mi voluntad, sino la tuya" (Lc 22,42)</p>
-<p>#### 2. La Flagelación del Señor</p>
+<h4>2. La Flagelación del Señor</h4>
 <p>> <strong>Meditación</strong>: Jesús es atado a una columna y flagelado cruelmente por los soldados romanos. ></p>
 <p>> <strong>Fruto del misterio</strong>: La mortificación de los sentidos ></p>
 <p>> <strong>Cita bíblica</strong>: "Pilato tomó a Jesús y mandó azotarle" (Jn 19,1)</p>
-<p>#### 3. La Coronación de Espinas</p>
+<h4>3. La Coronación de Espinas</h4>
 <p>> <strong>Meditación</strong>: Los soldados colocan una corona de espinas en la cabeza de Jesús y se burlan de Él como "Rey de los judíos". ></p>
 <p>> <strong>Fruto del misterio</strong>: La humildad ></p>
 <p>> <strong>Cita bíblica</strong>: "Trenzaron una corona de espinas y se la pusieron en la cabeza" (Mt 27,29)</p>
-<p>#### 4. Jesús Carga la Cruz</p>
+<h4>4. Jesús Carga la Cruz</h4>
 <p>> <strong>Meditación</strong>: Jesús carga la Cruz camino al Calvario, acompañado por el dolor de su Madre y las mujeres de Jerusalén. ></p>
 <p>> <strong>Fruto del misterio</strong>: La paciencia en las adversidades ></p>
 <p>> <strong>Cita bíblica</strong>: "El que quiera venir en pos de mí, tome su cruz y sígame" (Mt 16,24)</p>
-<p>#### 5. Crucifixión y Muerte de Nuestro Señor</p>
+<h4>5. Crucifixión y Muerte de Nuestro Señor</h4>
 <p>> <strong>Meditación</strong>: Jesús es crucificado entre dos ladrones. Desde la Cruz perdona y encomienda su espíritu al Padre. ></p>
 <p>> <strong>Fruto del misterio</strong>: El perdón de las ofensas ></p>
 <p>> <strong>Cita bíblica</strong>: "Padre, perdónalos, porque no saben lo que hacen" (Lc 23,34)</p>
 <h3>Misterios Gloriosos</h3>
 <p>Se rezan los miércoles y domingos</p>
 <p><strong>No obstante</strong>, tras el sufrimiento viene la gloria. <strong>En consecuencia</strong>, los Misterios Gloriosos nos invitan a contemplar la victoria de Cristo sobre la muerte y el triunfo de María.</p>
-<p>#### 1. La Resurrección del Señor</p>
+<h4>1. La Resurrección del Señor</h4>
 <p>> <strong>Meditación</strong>: Jesús resucita al tercer día, venciendo la muerte y el pecado. Aparece primero a las santas mujeres. ></p>
 <p>> <strong>Fruto del misterio</strong>: La fe en la vida eterna ></p>
 <p>> <strong>Cita bíblica</strong>: <strong>"No está aquí, ha resucitado"</strong><strong> (Lc 24,6)</p>
-<p>#### 2. La Ascensión del Señor</p>
+<h4>2. La Ascensión del Señor</h4>
 <p>> </strong>Meditación<strong>: Después de cuarenta días, Jesús asciende a los cielos a la vista de sus discípulos. ></p>
 <p>> </strong>Fruto del misterio<strong>: El deseo del cielo ></p>
 <p>> </strong>Cita bíblica<strong>: "Fue elevado y una nube lo ocultó de sus ojos" (Hch 1,9)</p>
-<p>#### 3. La Venida del Espíritu Santo</p>
+<h4>3. La Venida del Espíritu Santo</h4>
 <p>> </strong>Meditación<strong>: El Espíritu Santo desciende sobre los Apóstoles reunidos con María en el Cenáculo en forma de lenguas de fuego. ></p>
 <p>> </strong>Fruto del misterio<strong>: Los dones del Espíritu Santo ></p>
 <p>> </strong>Cita bíblica<strong>: "Quedaron todos llenos del Espíritu Santo" (Hch 2,4)</p>
-<p>#### 4. La Asunción de Nuestra Señora al Cielo</p>
+<h4>4. La Asunción de Nuestra Señora al Cielo</h4>
 <p>> </strong>Meditación<strong>: María es asunta al cielo en cuerpo y alma, participando ya de la gloria de la resurrección. ></p>
 <p>> </strong>Fruto del misterio<strong>: La devoción a María ></p>
 <p>> </strong>Cita bíblica<strong>: "Desde ahora me llamarán bienaventurada todas las generaciones" (Lc 1,48)</p>
-<p>#### 5. La Coronación de la Santísima Virgen</p>
+<h4>5. La Coronación de la Santísima Virgen</h4>
 <p>> </strong>Meditación<strong>: María es coronada Reina del cielo y de la tierra, intercesora y medianera de todas las gracias. ></p>
 <p>> </strong>Fruto del misterio<strong>: La confianza en la intercesión de María ></p>
 <p>> </strong>Cita bíblica<strong>: "Una gran señal apareció en el cielo: una mujer vestida del sol, con la luna bajo sus pies" (Ap 12,1)</p>
