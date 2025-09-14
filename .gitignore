@@ -26,3 +26,10 @@ Thumbs.db
 # Build artifacts
 dist/
 build/
+
+# Logs
+*.log
+site_generation.log
+
+# Reports
+validation_report.json
